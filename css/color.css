@@ -1,0 +1,19 @@
+body {
+  color: #000;
+}
+
+.menu li > a.link{
+  color: #aeaeae;
+}
+
+.menu li:hover > a.link{
+  color: blue;
+}
+
+.sub-menu li:hover > a.link{
+  color: #333;
+}
+
+.menu li > a.link.active{
+  color: blue;
+}
