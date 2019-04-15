@@ -1,0 +1,36 @@
+/* custom slick */
+
+.slick-wrapper .slick-dots{
+    list-style-type: none;
+
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    margin-bottom: 0;
+
+}
+
+.slick-wrapper .slick-dots li {
+    display: inline-block;
+}
+
+.slick-wrapper .slick-dots button{
+    font-size: 0;
+    line-height: 0;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+.slick-wrapper .slick-dots button:before{
+    content: '';
+    margin: 0 auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block;
+    background-color: #fff;
+}
+

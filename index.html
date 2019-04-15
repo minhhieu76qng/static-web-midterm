@@ -6,14 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- bootstrap 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- font awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- font chu -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Signika+Negative:400,300,600,700">
+
+    <!-- slick css -->
+    <link rel="stylesheet" href="css/slick.css">
+
+    <!-- my css -->
     <link rel="stylesheet" href="css/body.css">
     <link rel="stylesheet" href="css/color.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/content.css">
+
+    <link rel="stylesheet" href="css/slick_custom.css">
+
     <title>Homepage - VN-News</title>
 </head>
 
@@ -107,7 +120,8 @@
                     </div>
                     <div class="col-5">
                         <form class="form-inline search-box">
-                            <input class="search-bar form-control mr-sm-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                            <input class="search-bar form-control mr-sm-2" type="search" placeholder="Tìm kiếm..."
+                                aria-label="Search">
                             <button class="search-button btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
@@ -116,22 +130,98 @@
                             </div>
                         </form>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </header>
+
+    <div class="container">
+        <div class="impressive-articles row mt-4">
+            <div class="col-9">
+                <div class="slick-wrapper">
+                    <div class="article">
+                        <div class="article-thumbnail">
+                            <div class="thumbnail-image">
+                                <img src="images/post/10.jpg" alt="">
+                            </div>
+                            <div class="category">
+                                <a href="#" class="link">Giáo dục</a>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="published-date">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                Nov 5, 2018
+                            </div>
+                            <div class="article-title">
+                                <a href="#" class="link">44 books on 44 presidents: Welcome, folks, to the Adams</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <div class="article-thumbnail">
+                            <div class="thumbnail-image">
+                                <img src="images/post/10.jpg" alt="">
+                            </div>
+                            <div class="category">
+                                <a href="#" class="link">Giáo dục</a>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="published-date">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                Nov 5, 2018
+                            </div>
+                            <div class="article-title">
+                                <a href="#" class="link">44 books on 44 presidents: Welcome, folks, to the Adams</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="advertisement">
+                    <a href="#">
+                        <img src="images/ad/add1.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="lasted-articles">
+
+        </div>
+    </div>
 </body>
 
-
+<!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
+<!-- bootstrap -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+
+<!-- slick -->
+<script src="js/slick.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.slick-wrapper').slick({
+            arrows: false,
+            dots: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+    })
+</script>
 
 </html>

@@ -17,3 +17,7 @@ body {
 .menu li > a.link.active{
   color: blue;
 }
+
+.slick-wrapper .slick-dots li.slick-active button:before{
+  background-color: red;
+}
