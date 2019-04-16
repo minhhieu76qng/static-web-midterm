@@ -21,3 +21,11 @@ body {
 .slick-wrapper .slick-dots li.slick-active button:before{
   background-color: red;
 }
+
+.lasted-articles .slick-dots li button:before{
+  background-color: #ccc;
+}
+
+.article-header:before{
+  background-color: red;
+}
