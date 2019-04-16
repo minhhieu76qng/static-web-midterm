@@ -241,3 +241,15 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+/* LIST TAGS */
+.list-tags .tags{
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fff;
+}
+.list-tags .tags .link{
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+}
