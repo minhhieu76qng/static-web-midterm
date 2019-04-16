@@ -29,3 +29,7 @@ body {
 .article-header:before{
   background-color: red;
 }
+
+footer .footer-widgets .widget-title:before{
+  background-color: red;
+}
