@@ -21,10 +21,13 @@
 
     <!-- my css -->
     <link rel="stylesheet" href="css/body.css">
-    <link rel="stylesheet" href="css/color.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/content.css">
     <link rel="stylesheet" href="css/footer.css">
+
+    <link rel="stylesheet" href="css/color_widget.css">
+
+    <link rel="stylesheet" data="color_custom" href="css/color_red.css">
 
     <link rel="stylesheet" href="css/slick_custom.css">
 
@@ -33,13 +36,13 @@
 
 <body>
     <header id="header">
-        <div class="top-header">
+        <div class="top-header pt-2 pb-2">
             <div class="container">
                 <div class="row">
                     <div class="col">
                         <div class="main-logo">
                             <a href="#">
-                                <img class="logo" src="./images/logo/logo_red.png" alt="Homepage">
+                                <img class="logo icon_page" src="./images/logo/logo_red.png" alt="Homepage">
                             </a>
                         </div>
                     </div>
@@ -687,35 +690,6 @@
                         <a href="#" class="link">#congan</a>
                         <a href="#" class="link">#congan</a>
                         <a href="#" class="link">#congan</a>
-                        <!-- <div class="row">
-                            <div class="col-3">
-                                <a href="#" class="link">#congan</a>
-                            </div>
-                            <div class="col-3">
-                                <a href="#" class="link">#congan</a>
-                            </div>
-                            <div class="col-3">
-                                <a href="#" class="link">#congan</a>
-                            </div>
-                            <div class="col-3">
-                                <a href="#" class="link">#congan</a>
-                            </div>
-                            <div class="col-3">
-                                <a href="#" class="link">#congan</a>
-                            </div>
-                            <div class="col-3">
-                                <a href="#" class="link">#congan</a>
-                            </div>
-                            <div class="col-3">
-                                <a href="#" class="link">#congan</a>
-                            </div>
-                            <div class="col-3">
-                                <a href="#" class="link">#congan</a>
-                            </div>
-                            <div class="col-3">
-                                <a href="#" class="link">#congan</a>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -730,7 +704,7 @@
                     <div class="col-2">
                         <div class="widget">
                             <a href="#">
-                                <img class="logo" src="images/logo/logo_red.png" alt="Trang chủ" title="Trang chủ">
+                                <img class="logo icon_page" src="images/logo/logo_red.png" alt="Trang chủ" title="Trang chủ">
                             </a>
                         </div>
                     </div>
@@ -780,6 +754,22 @@
             <p class="text-center mb-0">Copyright &copy; 2019 VN-News. All rights reserved</p>
         </div>
     </footer>
+
+    <div id="widget-custom-color" expand="false">
+        <div class="color-wrapper">
+            <p class="mb-1">PRESETS COLOR</p>
+            <div class="color-menu">
+                <div class="color-item red active" colorValue="red"></div>
+                <div class="color-item purple" colorValue="purple"></div>
+                <div class="color-item green" colorValue="green"></div>
+                <div class="color-item blue-sky" colorValue="blue_sky"></div>
+            </div>
+        </div>
+
+        <div class="spin">
+            <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
+        </div>
+    </div>
 </body>
 
 <!-- jquery -->
@@ -797,6 +787,9 @@
 
 <!-- slick -->
 <script src="js/slick.min.js"></script>
+
+<!-- my js -->
+<script src="js/color_widget.js"></script>
 
 <script>
     $(document).ready(function () {
