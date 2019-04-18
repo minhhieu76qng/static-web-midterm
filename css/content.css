@@ -259,3 +259,9 @@
     margin-right: 10px;
     margin-top: 10px;
 }
+
+/* sidebar */
+.widget-sidebar .sidebar-wrapper{
+    position: absolute;
+    top: 0;
+}
