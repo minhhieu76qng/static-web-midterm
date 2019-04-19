@@ -40,12 +40,21 @@ function ScrollingSidebar() {
 
     let sidebar = document.querySelector('.widget-sidebar');
 
-    let sidebarTop = sidebar.getBoundingClientRect().top;
-
-    let heightNav = document.getElementById('header').clientHeight;
-
+    if (typeof sidebar === 'undefined' || sidebar === null){
+        return;
+    }
+    
     let sidebar_wrapper = sidebar.querySelector('.sidebar-wrapper');
 
+    if (typeof sidebar_wrapper === 'undefined' || sidebar_wrapper === null){
+        return;
+    }
+
+    let sidebarTop = sidebar.getBoundingClientRect().top;
+    
+    let heightNav = document.getElementById('header').clientHeight; 
+    
+    
     if (sidebarTop - heightNav <= 0) {
 
         if (Math.floor(-sidebarTop + heightNav) + sidebar_wrapper.clientHeight - (sidebar.clientHeight) < 0) {
