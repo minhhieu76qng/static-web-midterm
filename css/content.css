@@ -264,4 +264,6 @@
 .widget-sidebar .sidebar-wrapper{
     position: absolute;
     top: 0;
+    bottom: auto;
+    transition: all 1s;
 }

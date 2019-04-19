@@ -36,7 +36,7 @@ function DisplayHeader() {
 // trước khi chạy thì phải get được vị trí và kích thước của column side bar.
 // khi lăn thì thay đổi vị trí của sidebar-wrapper bằng position absolute và top:
 // khi top + height(sidebar) == height(widget) thì dừng không thêm top nữa.
-function Sidebar() {
+function ScrollingSidebar() {
 
     let sidebar = document.querySelector('.widget-sidebar');
 
@@ -51,11 +51,11 @@ function Sidebar() {
         if (Math.floor(-sidebarTop + heightNav) + sidebar_wrapper.clientHeight - (sidebar.clientHeight) < 0) {
             console.log(-sidebarTop + heightNav);
 
-            sidebar_wrapper.style.cssText = `top: ${Math.floor(-sidebarTop + heightNav)}px`;
+            sidebar_wrapper.style.cssText = `top: ${Math.floor(-sidebarTop + heightNav)}px;`;
         }
         else
         {
-            sidebar_wrapper.style.cssText = 'bottom:0; height:auto; top:auto;'
+            sidebar_wrapper.style.cssText = 'bottom:0; top:auto;'
         }
     }
     else
@@ -64,13 +64,35 @@ function Sidebar() {
     }
 }
 
+function BackToTop(){
+    // get height scroll hien tai
+    // neu height scroll > 100px thi hien thi button. nguoc lai thi an
+    if (window.scrollY > window.innerHeight){
+        document.getElementById('back-to-top').classList.remove('hidden');
+    }
+    else
+    {
+        document.getElementById('back-to-top').classList.add('hidden');
+    }
+}
+
 window.addEventListener('scroll', function () {
     DisplayHeader();
 
-    Sidebar();
+    ScrollingSidebar();
 
+    BackToTop();
 })
 
 window.addEventListener('load', function () {
-    Sidebar();
+    ScrollingSidebar();
+})
+
+// ------------------------------------------
+
+document.getElementById('back-to-top').addEventListener('click', function(){
+    window.scrollTo({
+        top : 0,
+        behavior : 'smooth'
+    })
 })
