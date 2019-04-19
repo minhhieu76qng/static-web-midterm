@@ -12,6 +12,14 @@ body {
     color: #000;
 }
 
+.link{
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover{
+  color: inherit;
+}
 
 /* =========================== HEADER AND NAV ======================= */
 
