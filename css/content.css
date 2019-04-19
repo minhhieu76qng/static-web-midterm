@@ -379,9 +379,10 @@
 }
 
 .post-comment ul.list-comment .comment-item{
-    margin-bottom: 30px;
+    margin-top: 30px;
     padding: 20px;
     background-color: #eff1f3;
+    border-radius: 3px;
 }
 .comment-item .user{
     display: flex;
@@ -402,6 +403,51 @@
     margin-left: 20px;
 }
 
+.post-comment ul.list-comment .comment-item-child{
+    padding: 20px;
+    background-color: #eff1f3;
+    margin-top: 10px;
+    margin-left: 50px;
+    border-left: 3px solid #d8d8d8;
+    border-radius: 3px;
+}
+.comment-item-child .user{
+    display: flex;
+    align-items: flex-end;
+}
+
+.comment-item-child .user .name{
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #16bdd8;
+}
+
+.comment-item-child .user .comment-date{
+    line-height: 20px;
+    font-size: 13px;
+    color: #000;
+    margin-left: 20px;
+}
+
 #comment-editor{
     height: 150px;
+}
+
+.pageNumber .page-item .page-link{
+    color: #000;
+    border: 1px solid #d6d6d6;
+}
+
+.page-item.active .page-link {
+    background-color: #c8c8c8;
+}
+
+.page-item.disabled .page-link {
+    color: #525b6e;
+}
+
+.replay{
+    color: rgb(23, 96, 147);
+    padding: 5px 3px;
 }
