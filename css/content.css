@@ -354,18 +354,26 @@
     margin-bottom: 5px;
 }
 
-.post .sub-image{
-    padding-top: 15px;
-    padding-bottom: 15px;
+.post .media-content-wrapper{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.post .media-content-wrapper .media-frame{
+    display: block;
+    position: relative;
+    height: 0;
 }
 
-.post .sub-image > img{
+.post .media-content-wrapper .media-frame .media-content{
+    position: absolute;
+    top: 0;
     display: block;
     margin: 0 auto;
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
 }
 
-.post .sub-image img + .sub-description{
+.post .media-content-wrapper .sub-description{
     margin: 0;
     margin-top: 10px;
     text-align: center;
@@ -383,6 +391,11 @@
     padding: 20px;
     background-color: #eff1f3;
 }
+
+.post-comment ul.list-comment .comment-item:last-child{
+    margin-bottom: 0px;
+}
+
 .comment-item .user{
     display: flex;
     align-items: flex-end;
