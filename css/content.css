@@ -179,12 +179,13 @@
     transition: all .7s ease;
 }
 
-.lasted-articles .slick-wrapper:hover .article:not(:hover) .article-thumbnail{
+.lasted-articles .slick-wrapper:hover .article:not(:hover) .article-thumbnail {
     opacity: .4;
 }
 
-.lasted-articles .slick-wrapper:hover .article:not(:hover) .thumbnail-image img{
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+.lasted-articles .slick-wrapper:hover .article:not(:hover) .thumbnail-image img {
+    -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
     filter: grayscale(70%);
 }
 
@@ -196,9 +197,9 @@
     transform: scale(1.3);
 }
 
-.lasted-articles .slick-dots li button:before{
+.lasted-articles .slick-dots li button:before {
     background-color: #ccc;
-  }
+}
 
 /* MOST VIEW */
 
@@ -248,50 +249,51 @@
 
 /* LIST TAGS */
 
-.list-tags{
+.list-tags {
     display: flex;
 }
-.list-tags ul.tags{
+
+.list-tags ul.tags {
     display: block;
     list-style-type: none;
     margin-bottom: 0;
 }
 
-.list-tags ul.tags .item{
+.list-tags ul.tags .item {
     display: inline-block;
-    color: rgb(4,85,183);
+    color: rgb(4, 85, 183);
     margin-left: 5px;
 }
 
-.list-tags ul.tags .item .link{
+.list-tags ul.tags .item .link {
     border: 1px solid #6cb2e4;
     font-size: 14px;
     padding: 3px 10px;
     border-radius: 3px;
-
 }
 
-.list-tags .link:hover{
+.list-tags .link:hover {
     text-decoration: none;
     color: inherit;
 }
 
-.top-10-articles + .widget-sidebar .list-tags{
+.top-10-articles+.widget-sidebar .list-tags {
     flex-direction: column;
 }
 
-.widget-sidebar .list-tags .tags{
+.widget-sidebar .list-tags .tags {
     border-radius: 5px;
     padding: 20px;
     background-color: #fff;
 }
 
-.widget-sidebar .list-tags .tags .item{
+.widget-sidebar .list-tags .tags .item {
     margin-bottom: 10px;
 }
 
 /* sidebar */
-.widget-sidebar .sidebar-wrapper{
+
+.widget-sidebar .sidebar-wrapper {
     position: absolute;
     top: 0;
     bottom: auto;
@@ -299,39 +301,40 @@
 }
 
 /* ============================ CHI TIẾT BÀI VIẾT ============================ */
-.post .post-container{
+
+.post .post-container {
     background-color: #fff;
     position: relative;
     padding-bottom: 15px;
 }
 
-.post .post-container > div:not(.cover-image-container){
+.post .post-container>div:not(.cover-image-container) {
     padding: 0 15px;
 }
 
-.post .cover-image-container{
+.post .cover-image-container {
     position: relative;
 }
 
-.post .cover-image-container .cover-image{
+.post .cover-image-container .cover-image {
     position: relative;
     overflow: hidden;
 }
 
-.post .cover-image-container .cover-image:before{
+.post .cover-image-container .cover-image:before {
     content: '';
     padding-top: 60%;
     display: block;
 }
 
-.post .cover-image img{
+.post .cover-image img {
     object-fit: cover;
     width: 100%;
     position: absolute;
     top: 0;
 }
 
-.post .post-title{
+.post .post-title {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -342,29 +345,30 @@
     margin-bottom: 0;
 }
 
-.post .post-description .category a{
+.post .post-description .category a {
     font-size: 20px;
 }
 
-.post .list-tags{
+.post .list-tags {
     align-items: flex-start;
 }
 
-.post .list-tags .tags .item{
+.post .list-tags .tags .item {
     margin-bottom: 5px;
 }
 
-.post .media-content-wrapper{
+.post .media-content-wrapper {
     margin-top: 15px;
     margin-bottom: 15px;
 }
-.post .media-content-wrapper .media-frame{
+
+.post .media-content-wrapper .media-frame {
     display: block;
     position: relative;
     height: 0;
 }
 
-.post .media-content-wrapper .media-frame .media-content{
+.post .media-content-wrapper .media-frame .media-content {
     position: absolute;
     top: 0;
     display: block;
@@ -373,7 +377,7 @@
     height: 100%;
 }
 
-.post .media-content-wrapper .sub-description{
+.post .media-content-wrapper .sub-description {
     margin: 0;
     margin-top: 10px;
     text-align: center;
@@ -381,58 +385,58 @@
     font-size: 14px;
 }
 
-.post-comment ul.list-comment{
+.post-comment ul.list-comment {
     list-style-type: none;
     margin-bottom: 0;
     margin-top: 30px;
 }
 
-.post-comment ul.list-comment .comment-item{
+.post-comment ul.list-comment .comment-item {
     margin-top: 30px;
 }
 
-.post-comment .comment-wrapper{
+.post-comment .comment-wrapper {
     padding: 20px;
     background-color: #eff1f3;
     border-radius: 3px;
 }
 
-.post-comment ul.list-comment .comment-item:first-child{
+.post-comment ul.list-comment .comment-item:first-child {
     margin-top: 0px;
 }
 
-.comment-item .user{
+.comment-item .user {
     display: flex;
     align-items: flex-end;
 }
 
-.comment-item .user .name{
+.comment-item .user .name {
     line-height: 20px;
     font-size: 16px;
     font-weight: 500;
     color: #16bdd8;
 }
 
-.comment-item .user .comment-date{
+.comment-item .user .comment-date {
     line-height: 20px;
     font-size: 13px;
     color: #000;
     margin-left: 20px;
 }
 
-.comment-item > ul.list-comment{
+.comment-item>ul.list-comment {
     margin-left: 50px;
 }
 
-.comment-item > ul.list-comment .comment-item{
+.comment-item>ul.list-comment .comment-item {
     border-left: 3px solid #d8d8d8;
 }
 
-#comment-editor{
+#comment-editor {
     height: 150px;
 }
 
-.pageNumber .page-item .page-link{
+.pageNumber .page-item .page-link {
     color: #000;
     border: 1px solid #d6d6d6;
 }
@@ -445,7 +449,7 @@
     color: #525b6e;
 }
 
-.replay{
+.replay {
     color: rgb(23, 96, 147);
     padding: 5px 3px;
 }

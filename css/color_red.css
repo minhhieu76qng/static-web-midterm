@@ -25,3 +25,7 @@ footer .footer-widgets .widget-title:before{
 #back-to-top{
   background-color: rgb(249,89,89);
 }
+
+.search-box .search-bar:focus + .search-button{
+  color: rgb(249,89,89);
+}

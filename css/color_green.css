@@ -25,3 +25,7 @@
   #back-to-top{
     background-color: rgb(62,167,152);
   }
+
+  .search-box .search-bar:focus + .search-button{
+    color:  rgb(62,167,152);
+  }
