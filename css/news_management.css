@@ -1,0 +1,81 @@
+#news-management .wrapper{
+    background-color: #fff;
+    padding: 15px;
+}
+
+.menu-management{
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+.menu-management .menu-management-item > a.link{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    transition: all .2s ease;
+}
+
+.menu-management .menu-management-item > a.link > .icon{
+    width: 30px;
+}
+
+.menu-management .menu-management-item > a.link > .linkText{
+    flex-grow: 1;
+    width: calc(100% - 30px);
+}
+
+.menu-management .menu-management-item.active > a.link{
+    color: #fff;
+}
+
+.menu-management .menu-management-item > a.link:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+#form-created-news > .form-group{
+    display: flex;
+    justify-content: flex-start;
+}
+
+#form-created-news > .form-group > :not(label){
+    width: calc(100% - 120px);
+}
+
+#form-created-news > .form-group > label{
+    width: 120px;
+    margin-bottom: 0;
+}
+
+#news-management .tags .item{
+    position: relative;
+    margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+#news-management .tags .item .link{
+    cursor: default;
+}
+
+#news-management .tags .item .exit-button{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    transform: translate(50%,-50%);
+    transition: all .5s ease;
+}
+
+#news-management .tags .item:hover .exit-button{
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+#news-management .tags .item.not-stored .link{
+    border: 1px solid red;
+    color: red;
+}

@@ -5,7 +5,7 @@
 }
 
 body {
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   background-color: #f2f3f5;
@@ -148,6 +148,7 @@ body {
 }
 
 .user-button .dropdown-menu{
+  font-size: inherit;
   opacity: 0;
   display: block;
   transition: opacity .3s ease;
@@ -278,4 +279,33 @@ footer .footer-bottom {
 #back-to-top.hidden {
   opacity: 0;
   right: 0;
+}
+
+/* TAGS */
+.list-tags {
+  display: flex;
+}
+
+.list-tags ul.tags {
+  display: block;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+.list-tags ul.tags .item {
+  display: inline-block;
+  color: rgb(4, 85, 183);
+  margin-left: 5px;
+}
+
+.list-tags ul.tags .item .link {
+  border: 1px solid #6cb2e4;
+  font-size: 14px;
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+
+.list-tags .link:hover {
+  text-decoration: none;
+  color: inherit;
 }

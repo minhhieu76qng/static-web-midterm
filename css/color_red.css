@@ -29,3 +29,10 @@ footer .footer-widgets .widget-title:before{
 .search-box .search-bar:focus + .search-button{
   color: rgb(249,89,89);
 }
+
+.menu-management .menu-management-item.active > a.link{
+  background-color: rgb(249,89,89);
+}
+.menu-management .menu-management-item > a.link:hover{
+  background-color: rgb(249,89,89);
+}

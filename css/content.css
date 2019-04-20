@@ -249,34 +249,6 @@
 
 /* LIST TAGS */
 
-.list-tags {
-    display: flex;
-}
-
-.list-tags ul.tags {
-    display: block;
-    list-style-type: none;
-    margin-bottom: 0;
-}
-
-.list-tags ul.tags .item {
-    display: inline-block;
-    color: rgb(4, 85, 183);
-    margin-left: 5px;
-}
-
-.list-tags ul.tags .item .link {
-    border: 1px solid #6cb2e4;
-    font-size: 14px;
-    padding: 3px 10px;
-    border-radius: 3px;
-}
-
-.list-tags .link:hover {
-    text-decoration: none;
-    color: inherit;
-}
-
 .top-10-articles+.widget-sidebar .list-tags {
     flex-direction: column;
 }

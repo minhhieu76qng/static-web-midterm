@@ -29,3 +29,10 @@
   .search-box .search-bar:focus + .search-button{
     color: rgb(98,111,203);
   }
+
+  .menu-management .menu-management-item.active > a.link{
+    background-color: rgb(98,111,203);
+  }
+  .menu-management .menu-management-item > a.link:hover{
+    background-color: rgb(98,111,203);
+  }
