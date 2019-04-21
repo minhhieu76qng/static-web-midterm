@@ -132,19 +132,46 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="col-4">
+                    <div class="col-5">
                         <form class="form-inline search-box">
-                            <input class="search-bar form-control mr-sm-2" type="search" placeholder="Tìm kiếm..."
-                                aria-label="Search">
-                            <button class="search-button btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">
+                            <input class="search-bar form-control" placeholder="Tìm kiếm..." aria-label="Search">
+                            <button class="search-button btn" type="submit">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
-                            <div class="btn btn-outline-secondary">
+                            <!-- <div class="btn btn-outline-secondary">
                                 <i class="fa fa-user" aria-hidden="true"></i>
-                            </div>
+                            </div> -->
                         </form>
-                    </div>
 
+                        <!-- khi đăng nhập rồi thì sẽ hiển thị phần này, ngược lại sẽ hiển thị nút đăng nhập -->
+                        <div class=" ml-2 dropdown open user-button">
+                            <button class="btn dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-circle-o mr-1" aria-hidden="true"></i> Hieu Do
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="triggerId">
+                                <div class="dropdown-item user-info">
+                                    <a class="image-wrapper" href="./user.html">
+                                        <img src="images/logo/logo_blue_sky.png" alt="">
+                                    </a>
+                                    <div class="info-wrapper">
+                                        <p class="user-name"><a href="./user.html" class="link">Hieu Do</a></p>
+                                        <p class="email">hieudo123@xyz.com</p>
+                                    </div>
+                                </div>
+                                <a class="dropdown-item" href="./user.html"><i class="fa fa-user-circle-o mr-2"
+                                        aria-hidden="true"></i> Tài khoản</a>
+                                <a class="dropdown-item" href="./news_management_phongvien.html"><i
+                                        class="fa fa-cog mr-2" aria-hidden="true"></i> Quản lí</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-sign-out mr-2" aria-hidden="true"></i>
+                                    Đăng xuất</a>
+                            </div>
+                        </div>
+
+                        <button class="btn login-button ml-2 d-none" type="button">
+                            <i class="fa fa-user-circle-o mr-1" aria-hidden="true"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -542,9 +569,9 @@
                             </li>
                         </ul>
                     </div>
-
+                    <h2 class="article-header">Các thẻ</h2>
                     <div class="list-tags">
-                        <h2 class="article-header">Các thẻ</h2>
+                        
                         <ul class="tags mt-4">
                             <li class="item"><a class="link" href="">thời sự</a></li>
                             <li class="item"><a class="link" href="">thời sự</a></li>
