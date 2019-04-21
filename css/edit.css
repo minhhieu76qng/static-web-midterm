@@ -1,0 +1,19 @@
+.dis{
+	display: flex;
+}
+
+.mar{
+	margin: 1%;
+}
+
+.paging{
+	justify-content: center;
+	display: flex;
+}
+
+.paging a{
+	border:  #333 solid 1px;
+	margin: 5px;
+	width: 20px;
+	text-align: center;
+}
