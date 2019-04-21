@@ -309,3 +309,41 @@ footer .footer-bottom {
   text-decoration: none;
   color: inherit;
 }
+
+/* widget menu */
+
+.menu-management{
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+.menu-management .menu-management-item > a.link{
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  transition: all .2s ease;
+}
+
+.menu-management .menu-management-item > a.link > .icon{
+  width: 30px;
+}
+
+.menu-management .menu-management-item > a.link > .linkText{
+  flex-grow: 1;
+  width: calc(100% - 30px);
+}
+
+.menu-management .menu-management-item.active > a.link{
+  color: #fff;
+}
+
+.menu-management .menu-management-item > a.link:hover{
+  text-decoration: none;
+  color: #fff;
+}
+
+#user-content .wrapper{
+  background-color: #fff;
+  padding: 15px;
+}

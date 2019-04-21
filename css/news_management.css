@@ -3,37 +3,6 @@
     padding: 15px;
 }
 
-.menu-management{
-    list-style-type: none;
-    margin-bottom: 0;
-}
-
-.menu-management .menu-management-item > a.link{
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    transition: all .2s ease;
-}
-
-.menu-management .menu-management-item > a.link > .icon{
-    width: 30px;
-}
-
-.menu-management .menu-management-item > a.link > .linkText{
-    flex-grow: 1;
-    width: calc(100% - 30px);
-}
-
-.menu-management .menu-management-item.active > a.link{
-    color: #fff;
-}
-
-.menu-management .menu-management-item > a.link:hover{
-    text-decoration: none;
-    color: #fff;
-}
-
 #form-created-news > .form-group{
     display: flex;
     justify-content: flex-start;
@@ -78,4 +47,8 @@
 #news-management .tags .item.not-stored .link{
     border: 1px solid red;
     color: red;
+}
+
+#news-management table.can-be-edit tbody tr{
+    cursor: pointer;
 }

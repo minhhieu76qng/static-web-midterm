@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- font chu -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700" rel="stylesheet">
+
+    <!-- my css -->
+    <link rel="stylesheet" href="css/body.css">
+
+    <link rel="stylesheet" href="css/color_widget.css">
+
+    <link rel="stylesheet" data="color_custom" href="css/color_red.css">
+
+    <script src="ckeditor/ckeditor.js"></script>
+
+    <title>Đăng bài viết mới</title>
+</head>
+
+<body>
+    <div id="top"></div>
+    <header id="header">
+        <div class="top-header pt-2 pb-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="main-logo">
+                            <a href="index.html">
+                                <img class="logo icon_page" src="./images/logo/logo_red.png" alt="Homepage">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-2 current-date">
+                        <span>Thứ 2, 08/04/2019</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="nav-search">
+            <div class="container">
+                <div class="row">
+                    <div class="col-1 sub-logo" style="display: none;">
+                        <div class="main-logo">
+                            <a href="index.html">
+                                <img class="logo icon_page" src="./images/logo/logo_red.png" alt="Homepage">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <nav class="main-nav">
+                            <ul class="menu">
+                                <li>
+                                    <a class="link" href="index.html">
+                                        Trang chủ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="link" href="list_post.html">Giáo dục</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a class="link" href="list_post.html">Tin tuyển sinh</a>
+                                        </li>
+                                        <li>
+                                            <a class="link" href="list_post.html">Khuyến học</a>
+                                        </li>
+                                        <li>
+                                            <a class="link" href="list_post.html">Du học</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="link" href="list_post.html">Thể thao</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a class="link" href="list_post.html">Thể thao trong nước</a>
+                                        </li>
+                                        <li>
+                                            <a class="link" href="list_post.html">Thể thao ngoài nước</a>
+                                        </li>
+                                        <li>
+                                            <a class="link" href="list_post.html">Bóng đá trong nước</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="link" href="list_post.html">Công nghệ</a>
+                                </li>
+                                <li>
+                                    <a class="link" href="list_post.html">Giải trí</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a class="link" href="list_post.html">Sao Việt</a>
+                                        </li>
+                                        <li>
+                                            <a class="link" href="list_post.html">Thời trang</a>
+                                        </li>
+                                        <li>
+                                            <a class="link" href="list_post.html">Xem - Ăn - Chơi</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="link" href="list_post.html">Sức khỏe</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a class="link" href="list_post.html">Kiến thức giới tính</a>
+                                        </li>
+                                        <li>
+                                            <a class="link" href="list_post.html">Làm đẹp</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-5">
+                        <form class="form-inline search-box">
+                            <input class="search-bar form-control" placeholder="Tìm kiếm..." aria-label="Search">
+                            <button class="search-button btn" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                            <!-- <div class="btn btn-outline-secondary">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </div> -->
+                        </form>
+
+
+                        <!-- khi đăng nhập rồi thì sẽ hiển thị phần này, ngược lại sẽ hiển thị nút đăng nhập -->
+                        <div class=" ml-2 dropdown open user-button">
+                            <button class="btn dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-circle-o mr-1" aria-hidden="true"></i> Hieu Do
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="triggerId">
+                                <div class="dropdown-item user-info">
+                                    <a class="image-wrapper" href="./user.html">
+                                        <img src="images/logo/logo_blue_sky.png" alt="">
+                                    </a>
+                                    <div class="info-wrapper">
+                                        <p class="user-name"><a href="./user.html" class="link">Hieu Do</a></p>
+                                        <p class="email">hieudo123@xyz.com</p>
+                                    </div>
+                                </div>
+                                <a class="dropdown-item" href="./user.html"><i class="fa fa-user-circle-o mr-2"
+                                        aria-hidden="true"></i> Tài khoản</a>
+                                <a class="dropdown-item" href="./news_management_phongvien.html"><i
+                                        class="fa fa-cog mr-2" aria-hidden="true"></i> Quản lí</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-sign-out mr-2" aria-hidden="true"></i>
+                                    Đăng xuất</a>
+                            </div>
+                        </div>
+
+                        <button class="btn login-button ml-2 d-none" type="button">
+                            <i class="fa fa-user-circle-o mr-1" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <section id="user-content" class="mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <!-- bao gom menu
+                                + xem thong tin ca nhan
+                                + cap nhat thong tin ca nhan
+                                + doi mat khau
+                            -->
+                    <div class="wrapper">
+                        <ul class="menu-management">
+                            <li class="menu-management-item active">
+                                <a class="link" href="#view-personal-info"><i class="icon fa fa-pencil-square-o"
+                                        aria-hidden="true"></i>
+                                    <div class="linkText">Xem thông tin</div>
+                                </a>
+                            </li>
+                            <li class="menu-management-item">
+                                <a class="link" href="#update-personal-info"><i class="icon fa fa-check-square-o"
+                                        aria-hidden="true"></i>
+                                    <div class="linkText">Cập nhật thông tin</div>
+                                </a>
+                            </li>
+                            <li class="menu-management-item">
+                                <a class="link" href="#change-password"><i class="icon fa fa-tasks"
+                                        aria-hidden="true"></i>
+                                    <div class="linkText">Đổi mật khẩu</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="wrapper">
+                        <div class="content-menu-item" id="view-personal-info">
+                            <h3 class="mb-3 mt-3">Xem thông tin cá nhân</h3>
+                            <form class="user-info view-info">
+                                <div class="form-group">
+                                    <label for="">Họ tên</label>
+                                    <input disabled name="name" type="text" class="form-control" value="Hieu Do">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Bút danh</label>
+                                    <input disabled name="pseudonym" type="text" class="form-control" value="Anon">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input disabled name="email" type="email" class="form-control"
+                                        value="hieudo_abc_xyz@zyx.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Ngày sinh</label>
+                                    <input disabled name="dob" type="text" class="form-control" value="02/01/1998">
+                                </div>
+                            </form>
+                        </div>
+                        <div style="display : none;" class="content-menu-item" id="update-personal-info">
+                            <h3 class="mb-3 mt-3">Cập nhật thông tin cá nhân</h3>
+                            <form class="user-info update-info">
+                                <div class="form-group">
+                                    <label for="">Họ tên</label>
+                                    <input name="name" type="text" class="form-control" placeholder="Họ tên">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Bút danh</label>
+                                    <input name="pseudonym" type="text" class="form-control" placeholder="Bút danh">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input name="email" type="email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Ngày sinh</label>
+                                    <input name="dob" type='date' class="form-control" />
+                                </div>
+
+                                <div class="buttons text-center">
+                                    <button class="btn btn-primary" type="submit">Cập nhật</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div style="display : none;" class="content-menu-item" id="change-password">
+                            <h3 class="mb-3 mt-3">Đổi mật khẩu</h3>
+                            <form action="" class="user-info change-pw">
+                                <div class="form-group">
+                                    <label for="">Tài khoản</label>
+                                    <div class="form-control username">hieudodeptrai</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Mật khẩu cũ</label>
+                                    <input type="password" class="form-control" name="oldPw" placeholder="">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Mật khẩu mới</label>
+                                    <input type="password" class="form-control" name="newPw" placeholder="">
+                                </div>
+
+                                <div class="buttons text-center">
+                                    <button class="btn btn-primary">Đổi mật khẩu</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer -->
+    <footer class="mt-5">
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="widget">
+                            <a href="index.html">
+                                <img class="logo icon_page" src="images/logo/logo_red.png" alt="Trang chủ"
+                                    title="Trang chủ">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="widget">
+                            <h3 class="widget-title">Chuyên mục</h3>
+                            <ul class="category widget-menu widget-content">
+                                <li>
+                                    <a class="link" href="#">Giáo dục</a>
+                                </li>
+                                <li>
+                                    <a class="link" href="#">Thể thao</a>
+                                </li>
+                                <li>
+                                    <a class="link" href="#">Công nghệ</a>
+                                </li>
+                                <li>
+                                    <a class="link" href="#">Giải trí</a>
+                                </li>
+                                <li>
+                                    <a class="link" href="#">Sức khỏe</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <h3 class="widget-title">Liên hệ</h3>
+                        <ul class="contact widget-menu widget-content">
+                            <li>Địa chỉ: 227 đường Nguyễn Văn Cừ, quận 5, TP. Hồ chí Minh, Việt Nam</li>
+                            <li>Số điện thoại: 0123456789</li>
+                            <li><a class="link" href="mailto:vn-news@abc.xyz.xx">Email: vn-news@abc.xyz.xx</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3">
+                        <h3 class="widget-title">Về chúng tôi</h3>
+                        <div class="about-us widget-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ducimus corporis vitae qui fugit
+                            laboriosam modi reprehenderit quae ex quisquam consequuntur, explicabo excepturi non maiores
+                            nesciunt necessitatibus voluptate ullam magni.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="text-center mb-0">Copyright &copy; 2019 VN-News. All rights reserved</p>
+        </div>
+    </footer>
+
+    <div id="widget-custom-color" expand="false">
+        <div class="color-wrapper">
+            <p class="mb-1">PRESETS COLOR</p>
+            <div class="color-menu">
+                <div class="color-item red active" colorValue="red"></div>
+                <div class="color-item purple" colorValue="purple"></div>
+                <div class="color-item green" colorValue="green"></div>
+                <div class="color-item blue-sky" colorValue="blue_sky"></div>
+            </div>
+        </div>
+
+        <div class="spin">
+            <i class="fa fa-cog fa-2x fa-fw"></i>
+        </div>
+    </div>
+
+    <div id="back-to-top" class="hidden">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="ShowMessage" tabindex="-1" role="dialog" aria-labelledby="ShowMessageLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ShowMessageLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<!-- bootstrap -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<!-- my js -->
+<script src="js/color_widget.js"></script>
+
+<script src="js/main.js"></script>
+
+<script src="js/widget_utility.js"></script>
+
+</html>
