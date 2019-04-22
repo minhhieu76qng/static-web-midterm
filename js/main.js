@@ -105,3 +105,28 @@ document.getElementById('back-to-top').addEventListener('click', function(){
         behavior : 'smooth'
     })
 })
+
+// Kiểm tra form SignUp ----------------------
+function checkDataSignUp(e) {
+    e.preventDefault();
+    let txtPassword = document.getElementById('txtPassword');
+    let txtEmail = document.getElementById('txtEmail');
+    let txtRepeatPassword = document.getElementById('txtRepeatPassword');
+
+    if ((txtEmail.value.indexOf('@') == -1 || txtEmail.value.substring(txtEmail.value.indexOf('@') + 1, txtEmail.value.length).indexOf('.') === -1)){
+        document.getElementById("wrongEmail").style.visibility ="visible";
+		return false;
+    }
+    
+    if(txtPassword.value.length<6){
+        document.getElementById("shortPass").style.visibility = "visible";
+		return;
+    }
+
+    if(txtPassword.value !== txtRepeatPassword.value){
+        document.getElementById("incorrectRePass").style.visibility = "visible";
+		return;
+    }
+
+    return true;
+  }
