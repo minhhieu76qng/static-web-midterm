@@ -52,3 +52,28 @@
 #news-management table.can-be-edit tbody tr{
     cursor: pointer;
 }
+
+/* Css admin */
+
+.menu-management-item>.menu-management{
+    padding-left: 15px;
+    display: none;
+}
+
+.menu-management-item>.menu-management>.menu-management-item{
+    background-color: #f2f2f2;
+}
+
+.content-menu-item>h3, .div-btn-control{
+    display: inline-block;
+}
+
+.div-btn-control{
+    float: right;
+    margin-top: 1rem;
+}
+
+.colDeleteCategory, .colDeleteTag, #btnEdit{
+    display: none;
+}
+

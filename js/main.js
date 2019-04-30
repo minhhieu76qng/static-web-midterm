@@ -126,6 +126,7 @@ $('#LogInModal').on('hidden.bs.modal', function () {
     document.getElementById('divSignIn').style.display = 'block';
     document.getElementById('divSignUp').style.display = 'none';
     document.getElementById('divForgotPass').style.display = 'none';
+    document.getElementById('LogInModalLabel').innerHTML = "Đăng nhập";
 })
 
 
