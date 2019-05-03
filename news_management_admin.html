@@ -269,7 +269,7 @@
                     <div class="wrapper wrapper-content">
                         <div class="content-menu-item" id="category-management">
                             <h3 class="mb-3 mt-3">Danh sách chuyên mục</h3>
-                            <div class="div-btn-control">
+                            <div class="div-btn-control mb-3 mt-3">
                                 <button type="button" class="btn btn-primary" id="addCategory" data-toggle="modal"
                                     data-target="#CategoryModal" data-backdrop="static" onclick="openAddCategory()">Thêm
                                     mới</button>
@@ -329,7 +329,7 @@
                         </div>
                         <div style="display : none;" class="content-menu-item" id="tag-management">
                             <h3 class="mb-3 mt-3">Danh sách nhãn tag</h3>
-                            <div class="div-btn-control">
+                            <div class="div-btn-control mb-3 mt-3">
                                 <button type="button" class="btn btn-primary" id="addTag" data-toggle="modal"
                                     data-target="#TagModal" data-backdrop="static" onclick="openAddTag()">Thêm
                                     mới</button>
@@ -383,153 +383,18 @@
                                 </ul>
                             </div>
                         </div>
-                        <div style="display : none;" class="content-menu-item" id="create-news">
-                            <h3 class="mb-3 mt-3">Đăng bài viết mới</h3>
-                            <form action="" id="form-created-news" onsubmit="return false">
-                                <div class="form-group">
-                                    <label for="post-title">Tiêu đề</label>
-                                    <div class="wrapper-control">
-
-                                        <div class="form-control" contenteditable="true" id="post-title"></div>
-
-                                        <script>
-                                            CKEDITOR.inline('post-title', {
-                                                language: 'en',
-                                                // width: '100%',
-                                                toolbarCanCollapse: true,
-                                                fullPage: true,
-                                                blockedKeystrokes: [13, CKEDITOR.SHIFT + 13],
-                                                // height: 150,
-                                                // resize_maxHeight: 150,
-                                                customConfig: './custom/plain_text.js'
-                                            });
-                                        </script>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="post-category">Chuyên mục</label>
-                                    <div class="wrapper-control">
-                                        <select class="form-control" name="post-category" id="post-category">
-                                            <option value="uid_value_123">Tin tuyển sinh</option>
-                                            <option value="uid_value_123">Khuyến học</option>
-                                            <option value="uid_value_123">Du học</option>
-                                            <option value="uid_value_123">Thể thao trong nước</option>
-                                            <option value="uid_value_123">Thể thao ngoài nước</option>
-                                            <option value="uid_value_123">Bóng đá trong nước</option>
-                                            <option value="uid_value_123">Công nghệ</option>
-                                            <option value="uid_value_123">Sao Việt</option>
-                                            <option value="uid_value_123">Thời trang</option>
-                                            <option value="uid_value_123">Xem - Ăn - Chơi</option>
-                                            <option value="uid_value_123">Kiến thức giới tính</option>
-                                            <option value="uid_value_123">Làm đẹp</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="insert-tags">Gán nhãn</label>
-                                    <div class="wrapper-control">
-                                        <div class="d-flex">
-                                            <select class="form-control mr-3" name="insert-tags" id="insert-tags">
-                                                <option value="" disabled>Chọn thẻ</option>
-                                                <option value="uid_value_456">ngày mai em đi</option>
-                                                <option value="uid_value_456">xe ducati</option>
-                                                <option value="uid_value_456">bị xì 1 lỗ</option>
-                                            </select>
-
-                                            <button type="button" class="btn-AddNewTag btn btn-success"
-                                                data-toggle="modal" data-target="#AddNewTag" title="Thêm mới thẻ">
-                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="AddNewTag" tabindex="-1" role="dialog"
-                                            aria-labelledby="AddNewTagTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="AddNewTagTitle">Thêm mới thẻ</h5>
-                                                        <button type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" name="NewTagName"
-                                                                id="NewTagName" placeholder="Tên thẻ">
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">Đóng</button>
-                                                        <button type="button" class="btnSave btn btn-primary"
-                                                            data-dismiss="modal">Lưu</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div id="preview-tags" class="list-tags mt-3 d-block">
-                                            <div class="mb-2">Tags:</div>
-                                            <ul class="tags">
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="summary-content-post">Nội dung tóm tắt</label>
-                                    <div class="wrapper-control">
-                                        <textarea class="form-control" name="summary-content-post"
-                                            id="summary-content-post" rows="3"></textarea>
-
-                                        <script>
-                                            CKEDITOR.replace('summary-content-post', {
-                                                language: 'en',
-                                                toolbarCanCollapse: true,
-                                                width: '100%',
-                                                height: 150,
-                                                resize_maxHeight: 150,
-                                                customConfig: './custom/plain_text.js'
-                                            });
-                                        </script>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="content-post">Nội dung</label>
-                                    <div class="wrapper-control">
-                                        <textarea class="form-control" name="content-post" id="content-post"
-                                            rows="3"></textarea>
-
-                                        <script>
-                                            CKEDITOR.replace('content-post', {
-                                                language: 'en',
-                                                // extraPlugins: 'easyimage',
-                                                // removePlugins: 'image',
-                                                toolbarCanCollapse: true,
-                                                // width: '100%',
-                                                // height: 250,
-                                                // resize_maxHeight: 250,
-                                                customConfig: './custom/post_content.js'
-                                            });
-                                        </script>
-                                    </div>
-                                </div>
-
-                                <div class="control-buttons text-center">
-                                    <button class="btn btn-primary" type="submit" `>Đăng bài</button>
-                                </div>
-                            </form>
-                        </div>
 
                         <div style="display : none;" class="content-menu-item" id="accepted-news">
                             <h3 class="mb-3 mt-3">Bài viết đã duyệt</h3>
-                            <table class="table table-hover table-bordered mb-0">
+                            <div class="input-group mb-3" id="search-management">
+                                <input class="form-control py-2" type="search" placeholder="Tìm kiếm">
+                                <span class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <table class="can-be-edit table table-hover table-bordered mb-0" id="accepted-news-table">
                                 <col style="width:5%">
                                 <col style="width:15%">
                                 <col style="width:40%">
@@ -548,7 +413,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr onclick="openDetailPost(this, 'accepted-news-table')">
                                         <td>1</td>
                                         <td>Giáo dục</td>
                                         <td>Những bất cập trong nền giáo dục Việt Nam</td>
@@ -556,7 +421,7 @@
                                         <td>30/04/2019</td>
                                         <td>Nguyễn B</td>
                                     </tr>
-                                    <tr>
+                                    <tr onclick="openDetailPost(this, 'accepted-news-table')">
                                         <td>2</td>
                                         <td>Công nghệ</td>
                                         <td>Một ngày làm việc ở Google</td>
@@ -566,14 +431,34 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <div class="pageNumber mt-4">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled"><button class="page-link">Trước</button></li>
+                                    <li class="page-item active"><button class="page-link">1</button></li>
+                                    <li class="page-item"><button class="page-link">2</button></li>
+                                    <li class="page-item"><button class="page-link">3</button></li>
+                                    <li class="page-item"><button class="page-link">4</button></li>
+                                    <li class="page-item"><button class="page-link">Sau</button></li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div style="display : none;" class="content-menu-item" id="not-accepted-news">
                             <h3 class="mb-3 mt-3">Bài viết chưa duyệt</h3>
-                            <table class="can-be-edit table table-hover table-bordered mb-0">
+                            <div class="input-group mb-3" id="search-management">
+                                <input class="form-control py-2" type="search" placeholder="Tìm kiếm">
+                                <span class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <table class="can-be-edit table table-hover table-bordered mb-0" id="not-accepted-news-table">
                                 <col style="width:5%">
                                 <col style="width:15%">
-                                <col style="width:70%">
+                                <col style="width:50%">
+                                <col style="width:20%">
                                 <col style="width:10%">
 
                                 <thead class="thead-dark">
@@ -581,29 +466,50 @@
                                         <th style="vertical-align: top;">#</th>
                                         <th style="vertical-align: top;">Chuyên mục</th>
                                         <th style="vertical-align: top;">Tiêu đề bài viết</th>
+                                        <th style="vertical-align: top;">Tác giả</th>
                                         <th style="vertical-align: top;">Thời gian đăng</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr onclick="openDetailPost(this, 'not-accepted-news-table')">
                                         <td>1</td>
                                         <td>Giáo dục</td>
                                         <td>Những bất cập trong nền giáo dục Việt Nam</td>
+                                        <td>Nguyễn A</td>
                                         <td>21/04/2019</td>
                                     </tr>
-                                    <tr>
+                                    <tr onclick="openDetailPost(this,'not-accepted-news-table')">
                                         <td>2</td>
                                         <td>Công nghệ</td>
                                         <td>Một ngày làm việc ở Google</td>
+                                        <td>Phạm B</td>
                                         <td>25/04/2019</td>
                                     </tr>
                                 </tbody>
                             </table>
+                            <div class="pageNumber mt-4">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled"><button class="page-link">Trước</button></li>
+                                    <li class="page-item active"><button class="page-link">1</button></li>
+                                    <li class="page-item"><button class="page-link">2</button></li>
+                                    <li class="page-item"><button class="page-link">3</button></li>
+                                    <li class="page-item"><button class="page-link">4</button></li>
+                                    <li class="page-item"><button class="page-link">Sau</button></li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div style="display : none;" class="content-menu-item" id="published-news">
                             <h3 class="mb-3 mt-3">Bài viết đã xuất bản</h3>
-                            <table class="table table-hover table-bordered mb-0">
+                            <div class="input-group mb-3" id="search-management">
+                                <input class="form-control py-2" type="search" placeholder="Tìm kiếm">
+                                <span class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <table class="can-be-edit table table-hover table-bordered mb-0" id="published-news-table">
                                 <col style="width:5%">
                                 <col style="width:15%">
                                 <col style="width:25%">
@@ -624,7 +530,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr onclick="openDetailPost(this,'published-news-table')">
                                         <td>1</td>
                                         <td>Giáo dục</td>
                                         <td>Những bất cập trong nền giáo dục Việt Nam</td>
@@ -633,7 +539,7 @@
                                         <td>30/04/2019</td>
                                         <td>Nguyễn B</td>
                                     </tr>
-                                    <tr>
+                                    <tr onclick="openDetailPost(this,'published-news-table')">
                                         <td>2</td>
                                         <td>Công nghệ</td>
                                         <td>Một ngày làm việc ở Google</td>
@@ -644,51 +550,16 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-
-                        <div style="display : none;" class="content-menu-item" id="refuse-news">
-                            <h3 class="mb-3 mt-3">Bài viết bị từ chối</h3>
-                            <table class="can-be-edit table table-hover table-bordered mb-0 w-100">
-                                <col style="width:5%">
-                                <col style="width:15%">
-                                <col style="width:25%">
-                                <col style="width:10%">
-                                <col style="width:10%">
-                                <col style="width:15%">
-                                <col style="width:20%">
-
-                                <thead class="thead-dark">
-                                    <tr class="text-center">
-                                        <th style="vertical-align: top;">#</th>
-                                        <th style="vertical-align: top;">Chuyên mục</th>
-                                        <th style="vertical-align: top;">Tiêu đề bài viết</th>
-                                        <th style="vertical-align: top;">Thời gian đăng</th>
-                                        <th style="vertical-align: top;">Thời gian từ chối</th>
-                                        <th style="vertical-align: top;">Người từ chối</th>
-                                        <th style="vertical-align: top;">Lý do</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Giáo dục</td>
-                                        <td>Những bất cập trong nền giáo dục Việt Nam</td>
-                                        <td>21/04/2019</td>
-                                        <td>30/04/2019</td>
-                                        <td>Nguyễn B</td>
-                                        <td>Sai thẻ, nội dung không rõ ràng</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Công nghệ</td>
-                                        <td>Một ngày làm việc ở Google</td>
-                                        <td>25/04/2019</td>
-                                        <td>25/04/2019</td>
-                                        <td>Trần L</td>
-                                        <td>Cần tìm hiểu lại nguồn tin</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="pageNumber mt-4">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled"><button class="page-link">Trước</button></li>
+                                    <li class="page-item active"><button class="page-link">1</button></li>
+                                    <li class="page-item"><button class="page-link">2</button></li>
+                                    <li class="page-item"><button class="page-link">3</button></li>
+                                    <li class="page-item"><button class="page-link">4</button></li>
+                                    <li class="page-item"><button class="page-link">Sau</button></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -831,9 +702,9 @@
                                 </div>
                                 <hr>
                                 <div class="clearfix">
-                                    <button type="button" class="btn btn-primary btnAdd" id="btnAdd"
+                                    <button type="button" class="btn btn-primary btnAdd" id="btnAddCategory"
                                         onclick="addCategory()">Thêm</button>
-                                    <button type="button" class="btn btn-primary btnEdit" id="btnEdit"
+                                    <button type="button" class="btn btn-primary btnEdit" id="btnEditCategory"
                                         onclick="editCategory()">Chỉnh sửa</button>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                                 </div>
@@ -861,15 +732,15 @@
                             <div class="AddTag-container">
                                 <div class="form-group">
                                     <label for="tag"><b>Tên nhãn</b></label>
-                                    <input class="form-control" id="txtTag" type="text"
-                                        placeholder="Nhập tên nhãn tag" name="tag" required>
+                                    <input class="form-control" id="txtTag" type="text" placeholder="Nhập tên nhãn tag"
+                                        name="tag" required>
                                     <!-- <span class="help-block" id="wrongEmail">Email không đúng</span> -->
                                 </div>
                                 <hr>
                                 <div class="clearfix">
-                                    <button type="button" class="btn btn-primary btnAdd" id="btnAdd"
+                                    <button type="button" class="btn btn-primary btnAdd" id="btnAddTag"
                                         onclick="addTag()">Thêm</button>
-                                    <button type="button" class="btn btn-primary btnEdit" id="btnEdit"
+                                    <button type="button" class="btn btn-primary btnEdit" id="btnEditTag"
                                         onclick="editTag()">Chỉnh sửa</button>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                                 </div>
@@ -878,6 +749,157 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <!--Modal: detail_post-->
+    <div class="modal fade" id="DetailPostModal" tabindex="-1" role="dialog" aria-labelledby="DetailPostModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Body-->
+                <div class="modal-body mb-0 p-0" id="iframe-detail-post-container">
+                    <iframe height="500px" width="100%" src="iframe_detail_post.html"></iframe>
+                </div>
+                <!-- Duyệt bài -->
+                <div id="AcceptPost-container" class="p-3">
+                    <h5>Nhập thông tin cần thiết</h5>
+                    <hr>
+                    <form>
+                        <div class="form-group">
+                            <label for="publicationDate">
+                                <b>Nhập ngày xuất bản</b>
+                            </label>
+                            <input name="publicationDate" type="date" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="post-category"><b>Chuyên mục</b></label>
+                            <div class="wrapper-control">
+                                <select class="form-control" name="post-category" id="post-category">
+                                    <option value="uid_value_123">Tin tuyển sinh</option>
+                                    <option value="uid_value_123">Khuyến học</option>
+                                    <option value="uid_value_123">Du học</option>
+                                    <option value="uid_value_123">Thể thao trong nước</option>
+                                    <option value="uid_value_123">Thể thao ngoài nước</option>
+                                    <option value="uid_value_123">Bóng đá trong nước</option>
+                                    <option value="uid_value_123">Công nghệ</option>
+                                    <option value="uid_value_123">Sao Việt</option>
+                                    <option value="uid_value_123">Thời trang</option>
+                                    <option value="uid_value_123">Xem - Ăn - Chơi</option>
+                                    <option value="uid_value_123">Kiến thức giới tính</option>
+                                    <option value="uid_value_123">Làm đẹp</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="insert-tags"><b>Gán nhãn</b></label>
+                            <div class="wrapper-control">
+                                <div class="d-flex">
+                                    <select class="form-control mr-3" name="insert-tags" id="insert-tags">
+                                        <option value="" disabled>Chọn thẻ</option>
+                                        <option value="uid_value_456">ngày mai em đi</option>
+                                        <option value="uid_value_456">xe ducati</option>
+                                        <option value="uid_value_456">bị xì 1 lỗ</option>
+                                    </select>
+
+                                    <button type="button" class="btn-AddNewTag btn btn-success" data-toggle="modal"
+                                        data-target="#AddNewTag" title="Thêm mới thẻ">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="AddNewTag" tabindex="-1" role="dialog"
+                                    aria-labelledby="AddNewTagTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="AddNewTagTitle">Thêm mới thẻ</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="NewTagName"
+                                                        id="NewTagName" placeholder="Tên thẻ">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Đóng</button>
+                                                <button type="button" class="btnSave btn btn-primary"
+                                                    data-dismiss="modal">Lưu</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="preview-tags" class="list-tags mt-3 d-block">
+                                    <div class="mb-2"><b>Tags:</b></div>
+                                    <ul class="tags">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <button type="button" class="btn btn-primary" onclick="AcceptComplete()">Hoàn tất</button>
+                        <button type="button" class="btn btn-secondary" onclick="BackMainDetailPost('AcceptPost-container')">Trở về</button>
+                    </form>
+                </div>
+                <!-- Gỡ bài viết -->
+                <div id="RemovePost-container" class="p-3">
+                    <form>
+                        <div class="form-group">
+                            <label for="reasonDenyPost">
+                                <h5>Nhập lý do gỡ bỏ</h5>
+                            </label>
+                            <textarea class="form-control" rows="5" id="reasonRemovePost"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="RemoveComplete()">Hoàn tất</button>
+                        <button type="button" class="btn btn-secondary" onclick="BackMainDetailPost('RemovePost-container')">Trở về</button>
+                    </form>
+                </div>
+                <!-- Từ chối bài viết -->
+                <div id="DenyPost-container" class="p-3">
+                    <form>
+                        <div class="form-group">
+                            <label for="reasonDenyPost">
+                                <h5>Nhập lý do từ chối</h5>
+                            </label>
+                            <textarea class="form-control" rows="5" id="reasonDenyPost"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="DenyComplete()">Hoàn tất</button>
+                        <button type="button" class="btn btn-secondary" onclick="BackMainDetailPost('DenyPost-container')">Trở về</button>
+                    </form>
+                </div>
+                <!-- Chỉnh sửa ngày xuất bản -->
+                <div id="UpdateDatePublishPost-container" class="p-3">
+                    <form>
+                        <div class="form-group">
+                            <label for="UpdateDatePublishPost">
+                                <h5>Chỉnh sửa thời gian phát hành</h5>
+                            </label>
+                            <input name="publicationDate" type="date" class="form-control" id="UpdateDatePublishPost">
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="UpdateDatePublishComplete()">Hoàn
+                            tất</button>
+                        <button type="button" class="btn btn-secondary" onclick="BackMainDetailPost('UpdateDatePublishPost-container')">Trở
+                            về</button>
+                    </form>
+                </div>
+                <!--Footer-->
+                <div class="modal-footer justify-content-center" id="DetailPostModalFooter">
+                    <button type="button" class="btn btn-primary" id="btnAcceptPost" onclick="openContainerAction('AcceptPost-container')">Duyệt</button>
+                    <button type="button" class="btn btn-info" id="btnUpdateDatePublishPost" onclick="openContainerAction('UpdateDatePublishPost-container')">Chỉnh sửa</button>
+                    <button type="button" class="btn btn-danger" id="btnDenyPost" onclick="openContainerAction('DenyPost-container')">Từ chối</button>
+                    <button type="button" class="btn btn-danger" id="btnRemovePost" onclick="openContainerAction('RemovePost-container')">Gỡ bỏ</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+            <!--/.Content-->
         </div>
     </div>
 </body>
@@ -902,7 +924,7 @@
 
 <script src="js/widget_utility.js"></script>
 
-<script src="js/editor_phongvien.js"></script>
+<!-- <script src="js/editor_phongvien.js"></script> -->
 
 <script src="js/admin.js"></script>
 

@@ -17,18 +17,18 @@
     margin-bottom: 0;
 }
 
-#news-management .tags .item{
+#news-management .tags .item, #DetailPostModal .tags .item{
     position: relative;
     margin-bottom: 15px;
     margin-left: 0;
     margin-right: 10px;
 }
 
-#news-management .tags .item .link{
+#news-management .tags .item .link, #DetailPostModal .tags .item .link{
     cursor: default;
 }
 
-#news-management .tags .item .exit-button{
+#news-management .tags .item .exit-button, #DetailPostModal .tags .item .exit-button{
     position: absolute;
     opacity: 0;
     pointer-events: none;
@@ -38,13 +38,13 @@
     transition: all .5s ease;
 }
 
-#news-management .tags .item:hover .exit-button{
+#news-management .tags .item:hover .exit-button, #DetailPostModal .tags .item:hover .exit-button{
     opacity: 1;
     pointer-events: auto;
     cursor: pointer;
 }
 
-#news-management .tags .item.not-stored .link{
+#news-management .tags .item.not-stored .link, #DetailPostModal .tags .item.not-stored .link{
     border: 1px solid red;
     color: red;
 }
@@ -68,12 +68,22 @@
     display: inline-block;
 }
 
-.div-btn-control{
+.div-btn-control, #search-management{
     float: right;
-    margin-top: 1rem;
 }
 
-.colDeleteCategory, .colDeleteTag, #btnEdit{
+.colDeleteCategory, .colDeleteTag, #btnEditCategory, #btnEditTag
+{
+    display: none;
+}
+
+#iframe-detail-post-container>iframe{
+    border:0px;
+}
+
+#DenyPost-container, #AcceptPost-container, #RemovePost-container, #UpdateDatePublishPost-container, 
+#btnAcceptPost, #btnUpdateDatePublishPost, #btnDenyPost, #btnRemovePost
+{
     display: none;
 }
 

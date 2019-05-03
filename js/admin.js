@@ -1,8 +1,12 @@
+//biến toàn cục
+//#region
 //array chuyên mục
 var categories = [
     { name: "Thời trang", parent: "4", sizePosts: 20 },
     { name: "Tin tuyển sinh", parent: "1", sizePosts: 15 }
 ]
+
+var curTag = [];
 
 //array chuyên mục lớn
 var ParentCategories = {
@@ -38,21 +42,22 @@ for (i = 0; i < dropdown.length; i++) {
         }
     });
 }
-
-
-
+//#endregion
 
 
 // Chuyên mục -----------------------------------------------------------------------------------------
-function openAddCategory() {
+//#region
+function openAddCategory()
+{
     document.getElementById('CategoryModalLabel').innerHTML = "Thêm chuyên mục";
-    document.getElementById('btnEdit').style.display = "none";
-    document.getElementById('btnAdd').style.display = "inline-block";
+    document.getElementById('btnEditCategory').style.display = "none";
+    document.getElementById('btnAddCategory').style.display = "inline-block";
     document.getElementById("parent-category").value = "1";
     document.getElementById("txtCategory").value = "";
 }
 
-function openEditCategory(r) {
+function openEditCategory(r)
+{
     if(isDeletingCategory === 1)
     {
         return;
@@ -61,20 +66,23 @@ function openEditCategory(r) {
     var table = document.getElementById("tableCategory");
     var category = document.getElementById("txtCategory");
     var parentCategory = document.getElementById("parent-category");
+
     document.getElementById('CategoryModalLabel').innerHTML = "Chỉnh sửa chuyên mục";
-    document.getElementById('btnEdit').style.display = "inline-block";
-    document.getElementById('btnAdd').style.display = "none";
+    document.getElementById('btnEditCategory').style.display = "inline-block";
+    document.getElementById('btnAddCategory').style.display = "none";
+
     //Set giá trị tương ứng với row được click
-    // console.log(ParentCategories[table.rows[r.rowIndex].cells[2].innerHTML]);
     category.value = table.rows[r.rowIndex].cells[1].innerHTML;
     parentCategory.value = ParentCategories[table.rows[r.rowIndex].cells[2].innerHTML];
     $('#CategoryModal').modal('show');
 }
 
-function openDeleteCategory() {
+function openDeleteCategory() 
+{
     var btnAdd = document.getElementById("addCategory");
     var btnDelete = document.getElementById("deleteCategory");
     var colDelete = document.getElementsByClassName("colDeleteCategory");
+
     if (colDelete[0].style.display === "table-cell") {//đang thưc hiện delete
 
         isDeletingCategory = 0;
@@ -98,10 +106,12 @@ function openDeleteCategory() {
     }
 }
 
-function addCategory() {
+function addCategory() 
+{
     var table = document.getElementById("tableCategory");
     let category = document.getElementById("txtCategory");
     let parentCategory = document.getElementById("parent-category");
+
     //insert vào đầu bảng
     var row = table.insertRow(1);
     row.onclick = function () { openEditCategory(this) };
@@ -110,12 +120,14 @@ function addCategory() {
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
     var cell5 = row.insertCell(4);
+
     cell1.innerHTML = 1;
     cell2.innerHTML = category.value;
     cell3.innerHTML = parentCategory.options[parentCategory.selectedIndex].text;
     cell4.innerHTML = "0";
     cell5.innerHTML = '<button class="btn btn-danger" onclick=deleteCategory(this)><i class="fa fa-trash" aria-hidden="true"></i></button>';
     cell5.className = "colDeleteCategory";
+
     //Thêm vào array categories
     categories.unshift({ name: category.value, parent: parentCategory.options[parentCategory.selectedIndex], sizePosts: 0 });
     //Chỉnh lại số thứ tự
@@ -126,20 +138,24 @@ function addCategory() {
 }
 
 
-function editCategory() {
+function editCategory() 
+{
     var table = document.getElementById("tableCategory");
     let category = document.getElementById("txtCategory");
     let parentCategory = document.getElementById("parent-category");
+
     //Set lại giá trị của phần tử trong array
     categories[rowIndex-1].name = category.value;
     categories[rowIndex-1].parent = parentCategory.options[parentCategory.selectedIndex].value;
+
     //update table
     table.rows[rowIndex].cells[1].innerHTML = category.value;
     table.rows[rowIndex].cells[2].innerHTML = parentCategory.options[parentCategory.selectedIndex].text;
     $('#CategoryModal').modal('hide');
 }
 
-function deleteCategory(r) {
+function deleteCategory(r) 
+{
     var index = r.parentNode.parentNode.rowIndex;
     var table = document.getElementById("tableCategory");
     //Xóa array 
@@ -150,16 +166,20 @@ function deleteCategory(r) {
         table.rows[i].cells[0].innerHTML = i;
     }
 }
+//#endregion
 
-// Nhãn tag -----------------------------------------------------------------------------------------
-function openAddTag() {
+// Nhãn tag -------------------------------------------------------------------------------------------
+//#region
+function openAddTag() 
+{
     document.getElementById('TagModalLabel').innerHTML = "Thêm nhãn tag";
-    document.getElementById('btnEdit').style.display = "none";
-    document.getElementById('btnAdd').style.display = "inline-block";
+    document.getElementById('btnEditTag').style.display = "none";
+    document.getElementById('btnAddTag').style.display = "inline-block";
     document.getElementById("txtTag").value = "";
 }
 
-function openEditTag(r) {
+function openEditTag(r) 
+{
     if(isDeletingTag === 1)
     {
         return;
@@ -168,15 +188,16 @@ function openEditTag(r) {
     var table = document.getElementById("tableTag");
     var tag = document.getElementById("txtTag");
     document.getElementById('TagModalLabel').innerHTML = "Chỉnh sửa nhãn tag";
-    document.getElementById('btnEdit').style.display = "inline-block";
-    document.getElementById('btnAdd').style.display = "none";
+    document.getElementById('btnEditTag').style.display = "inline-block";
+    document.getElementById('btnAddTag').style.display = "none";
     //Set giá trị tương ứng với row được click
     // console.log(ParentCategories[table.rows[r.rowIndex].cells[2].innerHTML]);
     tag.value = table.rows[r.rowIndex].cells[1].innerHTML;
     $('#TagModal').modal('show');
 }
 
-function openDeleteTag() {
+function openDeleteTag() 
+{
     var btnAdd = document.getElementById("addTag");
     var btnDelete = document.getElementById("deleteTag");
     var colDelete = document.getElementsByClassName("colDeleteTag");
@@ -204,7 +225,8 @@ function openDeleteTag() {
 }
 
 
-function addTag() {
+function addTag() 
+{
     var table = document.getElementById("tableTag");
     let tag = document.getElementById("txtTag");
     //insert vào đầu bảng
@@ -229,7 +251,8 @@ function addTag() {
 }
 
 
-function editTag() {
+function editTag() 
+{
     var table = document.getElementById("tableTag");
     let tag = document.getElementById("txtTag");
     //Set lại giá trị của phần tử trong array
@@ -239,7 +262,8 @@ function editTag() {
     $('#TagModal').modal('hide');
 }
 
-function deleteTag(r) {
+function deleteTag(r) 
+{
     var index = r.parentNode.parentNode.rowIndex;
     var table = document.getElementById('tableTag');
     //Xóa array 
@@ -250,3 +274,92 @@ function deleteTag(r) {
         table.rows[i].cells[0].innerHTML = i;
     }
 }
+//#endregion
+
+//Quản lý bài viết ------------------------------------------------------------------------------------
+//#region
+function openDetailPost(r, id_Table)
+{
+    $('#DetailPostModal').modal({backdrop: 'static'},'show');
+
+    if(id_Table==="accepted-news-table")
+    {
+        document.getElementById('btnUpdateDatePublishPost').style.display = 'flex';
+    }
+    else if (id_Table==="not-accepted-news-table")
+    {
+        document.getElementById('btnAcceptPost').style.display = 'flex';
+        document.getElementById('btnDenyPost').style.display = 'flex';
+    }
+    else //if(id_Table==="published-news-table")
+    {
+        document.getElementById('btnRemovePost').style.display = 'flex';
+    }
+}
+
+// $('#table-not-accepted-news').on('click-row.bs.table', function (row, $element, field) {
+//     // console.log(row, $element);
+//     alert("abc");
+//     $('#DetailPostModal').modal({backdrop: 'static'},'show');
+//     document.getElementById('btnAcceptPost').style.display = 'flex';
+//     document.getElementById('btnUpdateDatePublishPost').style.display = 'flex';
+//     document.getElementById('btnDenyPost').style.display = 'flex';
+//     document.getElementById('btnRemovePost').style.display = 'flex';
+// })
+
+//Khi đóng detailPost modal thì ẩn các phần tử đi
+$('#DetailPostModal').on('hidden.bs.modal', function () {
+
+    document.getElementById('AcceptPost-container').style.display = 'none';
+    document.getElementById('RemovePost-container').style.display = 'none';
+    document.getElementById('DenyPost-container').style.display = 'none';
+    document.getElementById('UpdateDatePublishPost-container').style.display = 'none';
+    document.getElementById('btnAcceptPost').style.display = 'none';
+    document.getElementById('btnUpdateDatePublishPost').style.display = 'none';
+    document.getElementById('btnDenyPost').style.display = 'none';
+    document.getElementById('btnRemovePost').style.display = 'none';
+})
+
+function AddTagFromSelect(name, value){
+    curTag.push({
+        'name' : name,
+        'value' : value
+    });
+
+    let list_tags = document.getElementById('preview-tags').querySelector('.tags');
+
+    let tag_item = document.createElement('li');
+    value !== '' ? tag_item.className = 'item' : tag_item.className = 'item not-stored';
+
+    let linkTag = document.createElement('a');
+    linkTag.className = 'link';
+    linkTag.textContent = name;
+
+    tag_item.innerHTML = '<i class="exit-button fa fa-times" aria-hidden="true"></i>';
+
+    tag_item.appendChild(linkTag);
+
+    tag_item.querySelector('.exit-button').addEventListener('click', function(){
+        this.parentElement.remove();
+        curTag.pop({name : name, value : value})
+    })
+
+    list_tags.appendChild(tag_item);
+}
+
+function openContainerAction(id_container)
+{
+    document.getElementById(id_container).style.display = 'block';
+    document.getElementById('DetailPostModalFooter').style.display = 'none';
+    // $('#DetailPostModal').animate({ scrollTop: $('#DetailPostModal .modal-dialog').height() }, 500);
+    $("#DetailPostModal").scrollTop($("#DetailPostModal").height());
+}
+
+
+function BackMainDetailPost(id_container)
+{
+    document.getElementById(id_container).style.display = 'none';
+    document.getElementById('DetailPostModalFooter').style.display = 'flex';
+}
+
+//#endregion
