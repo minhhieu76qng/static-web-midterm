@@ -428,14 +428,14 @@
 
 /* ============================ Modal Login ============================ */
 
-.input-group {
+#divSignIn .input-group {
     position: relative;
     display: table;
     border-collapse: separate;
     margin-top: 10px;
 }
 
-.input-group-addon {
+#divSignIn .input-group-addon {
     display: table-cell;
     padding: 6px 12px;
     font-size: 14px;
@@ -451,26 +451,26 @@
     border-top-right-radius: 0;
 }
 
-.input-group-addon, .input-group-btn {
+#divSignIn .input-group-addon, .input-group-btn {
     width: 1%;
     white-space: nowrap;
     vertical-align: middle;
 }
 
-.input-group .form-control {
+#divSignIn .input-group .form-control {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     float: left;
     width: 100%;
 }
 
-.btn-Login{
+#divSignIn .btn-Login{
     padding: 0px;
     margin-bottom: 10px;
     margin-top:10px;
 }
 
-.omb_spanOr {
+#divSignIn .omb_spanOr {
     position: absolute;
     left: 50%;
     top: -0.7em;
@@ -482,80 +482,81 @@
     color: #aaa;
 }
 
-.omb_hrOr {
+#divSignIn .omb_hrOr {
     background-color: #cdcdcd;
     height: 1px;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
 }
 
-.divLoginOr{
+#divSignIn .divLoginOr{
     width: 100%;
     position: relative;
 }
 
-.divRememberAndForgot{
+#divSignIn .divRememberAndForgot{
     display: block;
     width: 100%;
 }
 
-.divRememberPass{
+#divSignIn .divRememberPass{
     width: 50%;
     display: block;
     float: left;
 }
 
-.divForgotPass{
+#divSignIn .divForgotPass{
     text-align: right;
 }
 
-.divSocialButton{
+#divSignIn .divSocialButton{
     display: block;
     float: left;
     
 }
 
-.omb_socialButtons{
+#divSignIn .omb_socialButtons{
     margin-top: 30px;
     display: flex;
     justify-content: center;
 }
 
-.divSocialButton .omb_btn-facebook{
+#divSignIn .divSocialButton .omb_btn-facebook{
     background: #3B5998;
     color: white;
     width: 150px;
     padding: 0px;
     margin-right: 50px;
 }
-.divSocialButton .omb_btn-facebook .fa {
+#divSignIn .divSocialButton .omb_btn-facebook .fa {
     padding: 10px;
     font-size: 20px;
 }
 
-.divSocialButton .omb_btn-google{
+#divSignIn .divSocialButton .omb_btn-google{
     background: #dd4b39;
     color: white;
     width: 150px;
     padding: 0px;
 }
 
-.divSocialButton .omb_btn-google .fa {
+#divSignIn .divSocialButton .omb_btn-google .fa {
     padding: 10px;
     font-size: 20px;
 }
 
-.modal-footer{
+#divSignIn .modal-footer{
     justify-content: flex-start;
 }
 
-.divRememberPass, .divForgotPass{
+#divSignIn .divRememberPass, .divForgotPass{
     font-size: 14px;
 }
 
 .help-block{
     color: #ff1a1a;
     font-size: 14px;
+    display: none;
 }
 
 /* ============================ Modal SignUp ============================ */
@@ -584,8 +585,4 @@
 
 .input-group-SignUp{
     margin-bottom: 20px;
-}
-
-.help-block{
-    display: none;
 }

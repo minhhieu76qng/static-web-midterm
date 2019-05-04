@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
     <!-- font awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity=
-        'sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'> -->
 
     <!-- font chu -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700" rel="stylesheet">
@@ -243,19 +243,19 @@
                                 </a>
                                 <ul class="menu-management">
                                     <li class="menu-management-item">
-                                        <a class="link" href="#accepted-news"><i class="icon fa fa-pencil-square-o"
+                                        <a class="link" href="#writer-management"><i class="icon fa fa-pencil-square-o"
                                                 aria-hidden="true"></i>
                                             <div class="linkText">Phóng viên</div>
                                         </a>
                                     </li>
                                     <li class="menu-management-item">
-                                        <a class="link" href="#not-accepted-news"><i class="icon fa fa-user-plus"
+                                        <a class="link" href="#editor-management"><i class="icon fa fa-user-plus"
                                                 aria-hidden="true"></i>
                                             <div class="linkText">Biên tập viên</div>
                                         </a>
                                     </li>
                                     <li class="menu-management-item">
-                                        <a class="link" href="#published-news"><i class="icon fa fa-address-book"
+                                        <a class="link" href="#subscriber-management"><i class="icon fa fa-address-book"
                                                 aria-hidden="true"></i>
                                             <div class="linkText">Độc giả</div>
                                         </a>
@@ -454,7 +454,8 @@
                                 </span>
                             </div>
 
-                            <table class="can-be-edit table table-hover table-bordered mb-0" id="not-accepted-news-table">
+                            <table class="can-be-edit table table-hover table-bordered mb-0"
+                                id="not-accepted-news-table">
                                 <col style="width:5%">
                                 <col style="width:15%">
                                 <col style="width:50%">
@@ -547,6 +548,215 @@
                                         <td>25/04/2019</td>
                                         <td>01/05/2019</td>
                                         <td>Trần L</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pageNumber mt-4">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled"><button class="page-link">Trước</button></li>
+                                    <li class="page-item active"><button class="page-link">1</button></li>
+                                    <li class="page-item"><button class="page-link">2</button></li>
+                                    <li class="page-item"><button class="page-link">3</button></li>
+                                    <li class="page-item"><button class="page-link">4</button></li>
+                                    <li class="page-item"><button class="page-link">Sau</button></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div style="display : none;" class="content-menu-item" id="writer-management">
+                            <h3 class="mb-3 mt-3">Danh sách phóng viên</h3>
+                            <div class="div-btn-control mb-3 mt-3">
+                                <button type="button" class="btn btn-primary" id="createWriter" data-toggle="modal"
+                                    data-target="#CreateAccountModal" data-backdrop="static">Tạo
+                                    tài khoản</button>
+                            </div>
+                            <div class="input-group mb-3" id="search-management">
+                                <input class="form-control py-2" type="search" placeholder="Tìm kiếm">
+                                <span class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <table class="can-be-edit table table-hover table-bordered mb-0"
+                                id="writer-management-table">
+                                <col style="width:5%">
+                                <col style="width:25%">
+                                <col style="width:20%">
+                                <col style="width:15%">
+                                <col style="width:25%">
+                                <col style="width:10%">
+
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th style="vertical-align: top;">#</th>
+                                        <th style="vertical-align: top;">Tài khoản</th>
+                                        <th style="vertical-align: top;">Họ tên</th>
+                                        <th style="vertical-align: top;">Bút danh</th>
+                                        <th style="vertical-align: top;">Email</th>
+                                        <th class="text-center" style="vertical-align: top;">Số bài viết</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr onclick="openDetailAccount(this, 'writer-management-table')">
+                                        <td>1</td>
+                                        <td>anhdeptrai2019</td>
+                                        <td>Nguyen Van A</td>
+                                        <td>Lão Đậu</td>
+                                        <td>meoconngocnghech@gmail.com</td>
+                                        <td class="text-center">12</td>
+                                    </tr>
+                                    <tr onclick="openDetailAccount(this, 'writer-management-table')">
+                                        <td>2</td>
+                                        <td>thosanthanhpho</td>
+                                        <td>Nguyen Van B</td>
+                                        <td>Thanh Vân Tử</td>
+                                        <td>boynhangheo@gmail.com</td>
+                                        <td class="text-center">15</td>
+                                    </tr>
+                                    <tr onclick="openDetailAccount(this, 'writer-management-table')">
+                                        <td>3</td>
+                                        <td>onepiece</td>
+                                        <td>Monkey D. Luffy</td>
+                                        <td>Dr.Meo</td>
+                                        <td>vuahaitac@gmail.com</td>
+                                        <td class="text-center">6</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pageNumber mt-4">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled"><button class="page-link">Trước</button></li>
+                                    <li class="page-item active"><button class="page-link">1</button></li>
+                                    <li class="page-item"><button class="page-link">2</button></li>
+                                    <li class="page-item"><button class="page-link">3</button></li>
+                                    <li class="page-item"><button class="page-link">4</button></li>
+                                    <li class="page-item"><button class="page-link">Sau</button></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div style="display : none;" class="content-menu-item" id="editor-management">
+                            <h3 class="mb-3 mt-3">Danh sách biên tập viên</h3>
+                            <div class="div-btn-control mb-3 mt-3">
+                                <button type="button" class="btn btn-primary" id="createEditor" data-toggle="modal"
+                                    data-target="#CreateAccountModal" data-backdrop="static">Tạo
+                                    tài khoản</button>
+                            </div>
+                            <div class="input-group mb-3" id="search-management">
+                                <input class="form-control py-2" type="search" placeholder="Tìm kiếm">
+                                <span class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <table class="can-be-edit table table-hover table-bordered mb-0"
+                                id="editor-management-table">
+                                <col style="width:5%">
+                                <col style="width:25%">
+                                <col style="width:20%">
+                                <col style="width:15%">
+                                <col style="width:25%">
+                                <col style="width:10%">
+
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th style="vertical-align: top;">#</th>
+                                        <th style="vertical-align: top;">Tài khoản</th>
+                                        <th style="vertical-align: top;">Họ tên</th>
+                                        <th style="vertical-align: top;">Email</th>
+                                        <th style="vertical-align: top;">Chuyên mục quản lý</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr onclick="openDetailAccount(this, 'editor-management-table')">
+                                        <td>1</td>
+                                        <td>anhdeptrai2019</td>
+                                        <td>Nguyen Van A</td>
+                                        <td>meoconngocnghech@gmail.com</td>
+                                        <td>Tin tuyển sinh</td>
+                                    </tr>
+                                    <tr onclick="openDetailAccount(this, 'editor-management-table')">
+                                        <td>2</td>
+                                        <td>thosanthanhpho</td>
+                                        <td>Nguyen Van B</td>
+                                        <td>boynhangheo@gmail.com</td>
+                                        <td>Sao Việt ...</td>
+                                    </tr>
+                                    <tr onclick="openDetailAccount(this, 'editor-management-table')">
+                                        <td>3</td>
+                                        <td>onepiece</td>
+                                        <td>Monkey D. Luffy</td>
+                                        <td>vuahaitac@gmail.com</td>
+                                        <td>Thể thao trong nước ...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pageNumber mt-4">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled"><button class="page-link">Trước</button></li>
+                                    <li class="page-item active"><button class="page-link">1</button></li>
+                                    <li class="page-item"><button class="page-link">2</button></li>
+                                    <li class="page-item"><button class="page-link">3</button></li>
+                                    <li class="page-item"><button class="page-link">4</button></li>
+                                    <li class="page-item"><button class="page-link">Sau</button></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div style="display : none;" class="content-menu-item" id="subscriber-management">
+                            <h3 class="mb-3 mt-3">Danh sách độc giả</h3>
+                            <div class="div-btn-control mb-3 mt-3">
+                                <button type="button" class="btn btn-primary" id="createSubscriber" data-toggle="modal"
+                                    data-target="#CreateAccountModal" data-backdrop="static">Tạo tài khoản</button>
+                            </div>
+                            <div class="input-group mb-3" id="search-management">
+                                <input class="form-control py-2" type="search" placeholder="Tìm kiếm">
+                                <span class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <table class="can-be-edit table table-hover table-bordered mb-0"
+                                id="subscriber-management-table">
+                                <col style="width:5%">
+                                <col style="width:33%">
+                                <col style="width:30%">
+                                <col style="width:20%">
+                                <col style="width:12%">
+
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th style="vertical-align: top;">#</th>
+                                        <th style="vertical-align: top;">Tài khoản</th>
+                                        <th style="vertical-align: top;">Họ tên</th>
+                                        <th style="vertical-align: top;">Email</th>
+                                        <th style="vertical-align: top;">Tình trạng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr onclick="openDetailAccount(this, 'subscriber-management-table')">
+                                        <td>1</td>
+                                        <td>anhdeptrai2019</td>
+                                        <td>Nguyen Van A</td>
+                                        <td>meoconngocnghech@gmail.com</td>
+                                        <td><span class="badge badge-primary">Premium</span></td>
+                                    </tr>
+                                    <tr onclick="openDetailAccount(this, 'subscriber-management-table')">
+                                        <td>2</td>
+                                        <td>thosanthanhpho</td>
+                                        <td>Nguyen Van B</td>
+                                        <td>boynhangheo@gmail.com</td>
+                                        <td><span class="badge badge-warning">Hết hạn</span></td>
+                                    </tr>
+                                    <tr onclick="openDetailAccount(this, 'subscriber-management-table')">
+                                        <td>3</td>
+                                        <td>onepiece</td>
+                                        <td>Monkey D. Luffy</td>
+                                        <td>vuahaitac@gmail.com</td>
+                                        <td><span class="badge badge-danger">Bị cấm</span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -686,7 +896,6 @@
                                     <label for="category"><b>Chuyên mục</b></label>
                                     <input class="form-control" id="txtCategory" type="text"
                                         placeholder="Nhập tên chuyên mục" name="category" required>
-                                    <!-- <span class="help-block" id="wrongEmail">Email không đúng</span> -->
                                 </div>
                                 <div class="form-group">
                                     <label for="post-category"><b>Chuyên mục cha</b></label>
@@ -846,7 +1055,8 @@
                         </div>
                         <hr>
                         <button type="button" class="btn btn-primary" onclick="AcceptComplete()">Hoàn tất</button>
-                        <button type="button" class="btn btn-secondary" onclick="BackMainDetailPost('AcceptPost-container')">Trở về</button>
+                        <button type="button" class="btn btn-secondary"
+                            onclick="BackMainDetailPost('AcceptPost-container')">Trở về</button>
                     </form>
                 </div>
                 <!-- Gỡ bài viết -->
@@ -859,7 +1069,8 @@
                             <textarea class="form-control" rows="5" id="reasonRemovePost"></textarea>
                         </div>
                         <button type="button" class="btn btn-primary" onclick="RemoveComplete()">Hoàn tất</button>
-                        <button type="button" class="btn btn-secondary" onclick="BackMainDetailPost('RemovePost-container')">Trở về</button>
+                        <button type="button" class="btn btn-secondary"
+                            onclick="BackMainDetailPost('RemovePost-container')">Trở về</button>
                     </form>
                 </div>
                 <!-- Từ chối bài viết -->
@@ -872,7 +1083,8 @@
                             <textarea class="form-control" rows="5" id="reasonDenyPost"></textarea>
                         </div>
                         <button type="button" class="btn btn-primary" onclick="DenyComplete()">Hoàn tất</button>
-                        <button type="button" class="btn btn-secondary" onclick="BackMainDetailPost('DenyPost-container')">Trở về</button>
+                        <button type="button" class="btn btn-secondary"
+                            onclick="BackMainDetailPost('DenyPost-container')">Trở về</button>
                     </form>
                 </div>
                 <!-- Chỉnh sửa ngày xuất bản -->
@@ -886,20 +1098,183 @@
                         </div>
                         <button type="button" class="btn btn-primary" onclick="UpdateDatePublishComplete()">Hoàn
                             tất</button>
-                        <button type="button" class="btn btn-secondary" onclick="BackMainDetailPost('UpdateDatePublishPost-container')">Trở
+                        <button type="button" class="btn btn-secondary"
+                            onclick="BackMainDetailPost('UpdateDatePublishPost-container')">Trở
                             về</button>
                     </form>
                 </div>
                 <!--Footer-->
                 <div class="modal-footer justify-content-center" id="DetailPostModalFooter">
-                    <button type="button" class="btn btn-primary" id="btnAcceptPost" onclick="openContainerAction('AcceptPost-container')">Duyệt</button>
-                    <button type="button" class="btn btn-info" id="btnUpdateDatePublishPost" onclick="openContainerAction('UpdateDatePublishPost-container')">Chỉnh sửa</button>
-                    <button type="button" class="btn btn-danger" id="btnDenyPost" onclick="openContainerAction('DenyPost-container')">Từ chối</button>
-                    <button type="button" class="btn btn-danger" id="btnRemovePost" onclick="openContainerAction('RemovePost-container')">Gỡ bỏ</button>
+                    <button type="button" class="btn btn-primary" id="btnAcceptPost"
+                        onclick="openContainerAction('AcceptPost-container')">Duyệt</button>
+                    <button type="button" class="btn btn-info" id="btnUpdateDatePublishPost"
+                        onclick="openContainerAction('UpdateDatePublishPost-container')">Chỉnh sửa</button>
+                    <button type="button" class="btn btn-danger" id="btnDenyPost"
+                        onclick="openContainerAction('DenyPost-container')">Từ chối</button>
+                    <button type="button" class="btn btn-danger" id="btnRemovePost"
+                        onclick="openContainerAction('RemovePost-container')">Gỡ bỏ</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                 </div>
             </div>
             <!--/.Content-->
+        </div>
+    </div>
+    <!-- Modal: create account -->
+    <div class="modal fade" id="CreateAccountModal" tabindex="-1" role="dialog"
+        aria-labelledby="CreateAccountModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="CreateAccountModalLabel">Tạo tài khoản</h5>
+                    <button id="closeCreateAccountModal" type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/action_page.php" onsubmit="return checkDataSignUp()">
+                        <div class="CreateAccount-container">
+                            <div class="form-group">
+                                <label for="email"><b>Email</b></label>
+                                <input class="form-control" id="txtEmail" type="text" placeholder="Nhập email"
+                                    name="email" required>
+                                <span class="help-block" id="wrongEmail">Email không đúng</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name"><b>Họ và tên</b></label>
+                                <input class="form-control" id="txtName" type="text" placeholder="Nhập họ và tên"
+                                    name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="psw"><b>Password</b></label>
+                                <input class="form-control" id="txtPassword" type="password" placeholder="Nhập mật khẩu"
+                                    name="psw" required>
+                                <span class="help-block" id="shortPass">Mật khẩu phải có ít nhất 6 kí tự.</span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="psw-repeat"><b>Repeat Password</b></label>
+                                <input class="form-control" id="txtRepeatPassword" type="password"
+                                    placeholder="Nhập lại mật khẩu" name="psw-repeat" required>
+                                <span class="help-block" id="incorrectRePass">Mật khẩu không chính xác</span>
+                            </div>
+                            <div class="clearfix mt-4">
+                                <button type="submit" class="btn btn-primary btnSignUp">Đăng ký</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal: detail account-->
+    <div class="modal fade" id="DetailAccountModal" tabindex="-1" role="dialog"
+        aria-labelledby="DetailAccountModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="DetailAccountLabel">Thông tin tài khoản</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="user-info view-info">
+                        <div class="form-group">
+                            <label for=""><b>Họ tên</b></label>
+                            <input disabled name="name" type="text" class="form-control" value="Hieu Do">
+                        </div>
+                        <div class="form-group" id="pseudonymDetailAccountModal-container">
+                            <label for=""><b>Bút danh</b></label>
+                            <input disabled name="pseudonym" type="text" class="form-control" value="Anon">
+                        </div>
+                        <div class="form-group">
+                            <label for=""><b>Email</b></label>
+                            <input disabled name="email" type="email" class="form-control"
+                                value="hieudo_abc_xyz@zyx.com">
+                        </div>
+                        <div class="form-group">
+                            <label for=""><b>Ngày sinh</b></label>
+                            <input disabled name="dob" type="text" class="form-control" value="02/01/1998">
+                        </div>
+                        <div class="form-group" id="sizePostDetailAccountModal-container">
+                            <label for=""><b>Số lượng bài viết</b></label>
+                            <input disabled name="dob" type="text" class="form-control" value="15">
+                        </div>
+                        <div class="form-group" id="nOfDayPreDetailAccountModal-container">
+                            <label for=""><b>Số ngày premium</b></label>
+                            <input disabled name="dob" type="text" class="form-control" value="69">
+                        </div>
+                        <div class="form-group" id="categoryDetailAccountModal-container">
+                            <label for=""><b>Chuyên mục quản lý:</b></label>
+                            <ul id="category-editor">
+                                <li>Tin tuyển sinh</li>
+                                <li>Khuyến học</li>
+                                <li>Du học</li>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <label for=""><b>Tình trạng</b></label>
+                            <input disabled name="dob" type="text" class="form-control" value="Đang hoạt động">
+                        </div>
+                    </form>
+                    <!-- Gia hạn độc giả -->
+                    <div id="RenewSubscriber-container">
+                        <hr>
+                        <form>
+                            <div class="form-group">
+                                <label for="nOfDayRenew">
+                                    <h5>Nhập số ngày gia hạn</h5>
+                                </label>
+                                <input name="publicationDate" type="text" class="form-control" id="nOfDayRenew">
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="RenewComplete()">Hoàn
+                                tất</button>
+                            <button type="button" class="btn btn-secondary"
+                                onclick="BackMainDetailAccount('RenewSubscriber-container')">Trở
+                                về</button>
+                        </form>
+                    </div>
+                    <!-- Phân công cho biên tập viên-->
+                    <div id="AssignEditor-container">
+                        <hr>
+                        <form>
+                            <div class="form-group">
+                                <label for="">
+                                    <h5>Chọn chuyên mục phân công</h5>
+                                </label>
+                                <select class="selectpicker form-control" multiple data-live-search="true">
+                                    <option value="uid_value_123">Tin tuyển sinh</option>
+                                    <option value="uid_value_123">Khuyến học</option>
+                                    <option value="uid_value_123">Du học</option>
+                                    <option value="uid_value_123">Thể thao trong nước</option>
+                                    <option value="uid_value_123">Thể thao ngoài nước</option>
+                                    <option value="uid_value_123">Bóng đá trong nước</option>
+                                    <option value="uid_value_123">Công nghệ</option>
+                                    <option value="uid_value_123">Sao Việt</option>
+                                    <option value="uid_value_123">Thời trang</option>
+                                    <option value="uid_value_123">Xem - Ăn - Chơi</option>
+                                    <option value="uid_value_123">Kiến thức giới tính</option>
+                                    <option value="uid_value_123">Làm đẹp</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="AssignEditorComplete()">Hoàn
+                                tất</button>
+                            <button type="button" class="btn btn-secondary"
+                                onclick="BackMainDetailAccount('AssignEditor-container')">Trở
+                                về</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center" id="DetailAccountModal-footer">
+                    <button type="button" class="btn btn-primary" id="btnAssignEditor"
+                        onclick="openContainerAction('AssignEditor-container')">Phân công</button>
+                    <button type="button" class="btn btn-info" id="btnRenewSubscriber"
+                        onclick="openContainerAction('RenewSubscriber-container')">Gia hạn</button>
+                    <button type="button" class="btn btn-danger" id="btnBan">Cấm</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -916,6 +1291,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
 <!-- my js -->
 <script src="js/color_widget.js"></script>

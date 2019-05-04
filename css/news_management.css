@@ -53,7 +53,7 @@
     cursor: pointer;
 }
 
-/* Css admin */
+/* ------------------------------------  Css admin ------------------------------------------------------------*/
 
 .menu-management-item>.menu-management{
     padding-left: 15px;
@@ -87,3 +87,33 @@
     display: none;
 }
 
+.help-block{
+    color: #ff1a1a;
+    font-size: 14px;
+    display: none;
+}
+
+#DetailAccountModal #category-editor{
+    border: 1px solid #ced4da;
+    list-style-type:none;
+    border-radius: .25rem;
+    font-size: 1rem;
+    padding: .375rem .75rem;
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+#pseudonymDetailAccountModal-container, #sizePostDetailAccountModal-container,
+#nOfDayPreDetailAccountModal-container, #categoryDetailAccountModal-container,
+#btnAssignEditor, #btnRenewSubscriber, #AssignEditor-container, #RenewSubscriber-container
+{
+    display: none;
+}
+
+.bootstrap-select .btn {
+    border: 1px solid #ced4da;
+}
+
+.form-group label {
+    margin-bottom: .25rem;
+}

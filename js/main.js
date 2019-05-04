@@ -189,3 +189,11 @@ function checkDataLogIn(){
 
     return true;
 }
+
+function backLogIn()
+{
+    document.getElementById('divSignIn').style.display = 'block';
+    document.getElementById('divSignUp').style.display = 'none';
+    document.getElementById('divForgotPass').style.display = 'none';
+    document.getElementById('LogInModalLabel').innerHTML = "Đăng nhập";
+}

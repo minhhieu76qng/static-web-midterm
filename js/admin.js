@@ -47,8 +47,7 @@ for (i = 0; i < dropdown.length; i++) {
 
 // Chuyên mục -----------------------------------------------------------------------------------------
 //#region
-function openAddCategory()
-{
+function openAddCategory() {
     document.getElementById('CategoryModalLabel').innerHTML = "Thêm chuyên mục";
     document.getElementById('btnEditCategory').style.display = "none";
     document.getElementById('btnAddCategory').style.display = "inline-block";
@@ -56,10 +55,8 @@ function openAddCategory()
     document.getElementById("txtCategory").value = "";
 }
 
-function openEditCategory(r)
-{
-    if(isDeletingCategory === 1)
-    {
+function openEditCategory(r) {
+    if (isDeletingCategory === 1) {
         return;
     }
     rowIndex = r.rowIndex;
@@ -77,8 +74,7 @@ function openEditCategory(r)
     $('#CategoryModal').modal('show');
 }
 
-function openDeleteCategory() 
-{
+function openDeleteCategory() {
     var btnAdd = document.getElementById("addCategory");
     var btnDelete = document.getElementById("deleteCategory");
     var colDelete = document.getElementsByClassName("colDeleteCategory");
@@ -106,8 +102,7 @@ function openDeleteCategory()
     }
 }
 
-function addCategory() 
-{
+function addCategory() {
     var table = document.getElementById("tableCategory");
     let category = document.getElementById("txtCategory");
     let parentCategory = document.getElementById("parent-category");
@@ -138,15 +133,14 @@ function addCategory()
 }
 
 
-function editCategory() 
-{
+function editCategory() {
     var table = document.getElementById("tableCategory");
     let category = document.getElementById("txtCategory");
     let parentCategory = document.getElementById("parent-category");
 
     //Set lại giá trị của phần tử trong array
-    categories[rowIndex-1].name = category.value;
-    categories[rowIndex-1].parent = parentCategory.options[parentCategory.selectedIndex].value;
+    categories[rowIndex - 1].name = category.value;
+    categories[rowIndex - 1].parent = parentCategory.options[parentCategory.selectedIndex].value;
 
     //update table
     table.rows[rowIndex].cells[1].innerHTML = category.value;
@@ -154,13 +148,12 @@ function editCategory()
     $('#CategoryModal').modal('hide');
 }
 
-function deleteCategory(r) 
-{
+function deleteCategory(r) {
     var index = r.parentNode.parentNode.rowIndex;
     var table = document.getElementById("tableCategory");
     //Xóa array 
     categories.splice(r.insertRow - 1);
-    
+
     table.deleteRow(index);
     for (var i = index; i < table.rows.length; i++) {
         table.rows[i].cells[0].innerHTML = i;
@@ -170,18 +163,15 @@ function deleteCategory(r)
 
 // Nhãn tag -------------------------------------------------------------------------------------------
 //#region
-function openAddTag() 
-{
+function openAddTag() {
     document.getElementById('TagModalLabel').innerHTML = "Thêm nhãn tag";
     document.getElementById('btnEditTag').style.display = "none";
     document.getElementById('btnAddTag').style.display = "inline-block";
     document.getElementById("txtTag").value = "";
 }
 
-function openEditTag(r) 
-{
-    if(isDeletingTag === 1)
-    {
+function openEditTag(r) {
+    if (isDeletingTag === 1) {
         return;
     }
     rowIndex = r.rowIndex;
@@ -196,8 +186,7 @@ function openEditTag(r)
     $('#TagModal').modal('show');
 }
 
-function openDeleteTag() 
-{
+function openDeleteTag() {
     var btnAdd = document.getElementById("addTag");
     var btnDelete = document.getElementById("deleteTag");
     var colDelete = document.getElementsByClassName("colDeleteTag");
@@ -225,8 +214,7 @@ function openDeleteTag()
 }
 
 
-function addTag() 
-{
+function addTag() {
     var table = document.getElementById("tableTag");
     let tag = document.getElementById("txtTag");
     //insert vào đầu bảng
@@ -251,24 +239,22 @@ function addTag()
 }
 
 
-function editTag() 
-{
+function editTag() {
     var table = document.getElementById("tableTag");
     let tag = document.getElementById("txtTag");
     //Set lại giá trị của phần tử trong array
-    tags[rowIndex-1].name = tag.value;
+    tags[rowIndex - 1].name = tag.value;
     //update table
     table.rows[rowIndex].cells[1].innerHTML = tag.value;
     $('#TagModal').modal('hide');
 }
 
-function deleteTag(r) 
-{
+function deleteTag(r) {
     var index = r.parentNode.parentNode.rowIndex;
     var table = document.getElementById('tableTag');
     //Xóa array 
     tags.splice(r.insertRow - 1);
-    
+
     table.deleteRow(index);
     for (var i = index; i < table.rows.length; i++) {
         table.rows[i].cells[0].innerHTML = i;
@@ -278,16 +264,14 @@ function deleteTag(r)
 
 //Quản lý bài viết ------------------------------------------------------------------------------------
 //#region
-function openDetailPost(r, id_Table)
-{
-    $('#DetailPostModal').modal({backdrop: 'static'},'show');
+function openDetailPost(r, id_Table) {
+    $('#DetailPostModal').modal({ backdrop: 'static' }, 'show');
 
-    if(id_Table==="accepted-news-table")
-    {
+    if (id_Table === "accepted-news-table") {
         document.getElementById('btnUpdateDatePublishPost').style.display = 'flex';
+        document.getElementById('btnRemovePost').style.display = 'flex';
     }
-    else if (id_Table==="not-accepted-news-table")
-    {
+    else if (id_Table === "not-accepted-news-table") {
         document.getElementById('btnAcceptPost').style.display = 'flex';
         document.getElementById('btnDenyPost').style.display = 'flex';
     }
@@ -320,10 +304,33 @@ $('#DetailPostModal').on('hidden.bs.modal', function () {
     document.getElementById('btnRemovePost').style.display = 'none';
 })
 
-function AddTagFromSelect(name, value){
+var insert_tags = document.getElementById('insert-tags');
+
+// if (insert_tags === null || typeof insert_tags === 'undefined') {
+//     return;
+// }
+
+insert_tags.selectedIndex = 0;
+
+insert_tags.addEventListener('change', function (event) {
+    let opt = insert_tags.options[insert_tags.selectedIndex];
+
+    const name = opt.text, value = opt.value;
+
+    var res = curTag.filter((obj) => obj.name === name && obj.value === value);
+
+    if (res.length !== 0) {
+        alert('Thẻ này đã có trong danh sách!');
+        return;
+    }
+
+    AddTagFromSelect(name, value);
+});
+
+function AddTagFromSelect(name, value) {
     curTag.push({
-        'name' : name,
-        'value' : value
+        'name': name,
+        'value': value
     });
 
     let list_tags = document.getElementById('preview-tags').querySelector('.tags');
@@ -339,16 +346,15 @@ function AddTagFromSelect(name, value){
 
     tag_item.appendChild(linkTag);
 
-    tag_item.querySelector('.exit-button').addEventListener('click', function(){
+    tag_item.querySelector('.exit-button').addEventListener('click', function () {
         this.parentElement.remove();
-        curTag.pop({name : name, value : value})
+        curTag.pop({ name: name, value: value })
     })
 
     list_tags.appendChild(tag_item);
 }
 
-function openContainerAction(id_container)
-{
+function openContainerAction(id_container) {
     document.getElementById(id_container).style.display = 'block';
     document.getElementById('DetailPostModalFooter').style.display = 'none';
     // $('#DetailPostModal').animate({ scrollTop: $('#DetailPostModal .modal-dialog').height() }, 500);
@@ -356,10 +362,69 @@ function openContainerAction(id_container)
 }
 
 
-function BackMainDetailPost(id_container)
-{
+function BackMainDetailPost(id_container) {
     document.getElementById(id_container).style.display = 'none';
     document.getElementById('DetailPostModalFooter').style.display = 'flex';
+}
+
+//#endregion
+
+//Quản lý người dùng-----------------------------------------------------------------------------------
+//#region
+
+function openDetailAccount(r, id_Table) {
+    $('#DetailAccountModal').modal({ backdrop: 'static' }, 'show');
+
+    if (id_Table === "writer-management-table") {
+        document.getElementById('pseudonymDetailAccountModal-container').style.display = 'block';
+        document.getElementById('sizePostDetailAccountModal-container').style.display = 'block';
+    }
+    else if (id_Table === "editor-management-table") {
+        document.getElementById('btnAssignEditor').style.display = 'flex';
+        document.getElementById('categoryDetailAccountModal-container').style.display = 'block';
+    }
+    else //if(id_Table==="subscriber-management-table")
+    {
+        document.getElementById('btnRenewSubscriber').style.display = 'flex';
+        document.getElementById('nOfDayPreDetailAccountModal-container').style.display = 'block';
+    }
+}
+
+//Khi đóng detailAccount modal thì ẩn các phần tử đi
+$('#DetailAccountModal').on('hidden.bs.modal', function () {
+
+    document.getElementById('pseudonymDetailAccountModal-container').style.display = 'none';
+    document.getElementById('sizePostDetailAccountModal-container').style.display = 'none';
+    document.getElementById('btnAssignEditor').style.display = 'none';
+    document.getElementById('categoryDetailAccountModal-container').style.display = 'none';
+    document.getElementById('btnRenewSubscriber').style.display = 'none';
+    document.getElementById('nOfDayPreDetailAccountModal-container').style.display = 'none';
+})
+
+function BackMainDetailAccount(id_container)
+{
+    document.getElementById(id_container).style.display = 'none';
+    document.getElementById('DetailAccountModal-footer').style.display = 'flex';
+}
+
+function openContainerAction(id_container)
+{
+    document.getElementById(id_container).style.display = 'block';
+    document.getElementById('DetailAccountModal-footer').style.display = 'none';
+    // $('#DetailPostModal').animate({ scrollTop: $('#DetailPostModal .modal-dialog').height() }, 500);
+    $("#DetailAccountModal").scrollTop($("#DetailAccountModal").height());
+}
+
+function AssignEditorComplete()
+{
+    document.getElementById('AssignEditor-container').style.display = 'none';
+    document.getElementById('DetailAccountModal-footer').style.display = 'flex';
+}
+
+function RenewComplete()
+{
+    document.getElementById('RenewSubscriber-container').style.display = 'none';
+    document.getElementById('DetailAccountModal-footer').style.display = 'flex';
 }
 
 //#endregion
