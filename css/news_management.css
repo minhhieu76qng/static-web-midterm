@@ -87,6 +87,11 @@
     display: none;
 }
 
+#DenyPost-container, #AcceptPost-container, #RemovePost-container, #UpdateDatePublishPost-container,
+#AssignEditor-container, #RenewSubscriber-container{
+    border-top: 1px solid #dee2e6;
+}
+
 .help-block{
     color: #ff1a1a;
     font-size: 14px;
