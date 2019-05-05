@@ -118,7 +118,8 @@
     font-size: 25px;
     position: relative;
     margin-bottom: 20px;
-    color: #525b6e;
+    /* color: #525b6e; */
+    text-transform: uppercase;
 }
 
 .article-header:before {
