@@ -43,6 +43,10 @@ function ScrollingSidebar() {
     if (typeof sidebar === 'undefined' || sidebar === null){
         return;
     }
+
+    if (!sidebar.classList.contains("active_sidebar")){
+        return;
+    }
     
     let sidebar_wrapper = sidebar.querySelector('.sidebar-wrapper');
 

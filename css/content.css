@@ -8,6 +8,10 @@
     overflow: hidden;
 }
 
+.article .article-thumbnail{
+    position: relative;
+}
+
 .article .thumbnail-image img {
     position: absolute;
     top: 0;
@@ -78,6 +82,7 @@
 }
 
 .impressive-articles .article-content .article-title .link {
+    font-size: 28px;
     color: inherit;
     text-decoration: none;
 }
@@ -113,7 +118,8 @@
     font-size: 25px;
     position: relative;
     margin-bottom: 20px;
-    color: #525b6e;
+    /* color: #525b6e; */
+    text-transform: uppercase;
 }
 
 .article-header:before {
@@ -241,6 +247,7 @@
 }
 
 .article-title>.link {
+    font-size: 16px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -265,7 +272,7 @@
 
 /* sidebar */
 
-.widget-sidebar .sidebar-wrapper {
+.widget-sidebar.active_sidebar .sidebar-wrapper {
     position: absolute;
     top: 0;
     bottom: auto;
@@ -414,7 +421,7 @@
 }
 
 .page-item.active .page-link {
-    background-color: #c8c8c8;
+    /* background-color: #c8c8c8; */
 }
 
 .page-item.disabled .page-link {
@@ -585,4 +592,50 @@
 
 .input-group-SignUp{
     margin-bottom: 20px;
+}
+
+ul.list-article{
+    list-style-type: none;
+}
+ul.list-article li.article-item{
+    border-bottom: 1px solid #ccc;
+}
+
+ul.list-article li.article-item:last-child{
+    border-bottom: 0;
+}
+
+ul.list-article li.article-item .article{
+    padding: 25px 15px;
+}
+
+.list_post_page .article{
+    display: flex;
+    align-content: center;
+}
+
+.list_post_page .article .article-thumbnail{
+    width: 250px;
+}
+
+.list_post_page .article .article-content{
+    width: calc(100% - 250px);
+    padding: 0 30px;
+    
+}
+
+.list_post_page .article .article-thumbnail .thumbnail-image:before{
+    padding-top: 70%;
+}
+.list_post_page .article .thumbnail-image img{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.list_post_page .article .article-title .link{
+    font-size: 21px;
+    font-weight: 500;
+    display: block;
 }
