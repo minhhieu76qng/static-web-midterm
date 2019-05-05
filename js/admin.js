@@ -354,10 +354,9 @@ function AddTagFromSelect(name, value) {
     list_tags.appendChild(tag_item);
 }
 
-function openContainerAction(id_container) {
+function openContainerActionDetailPost(id_container) {
     document.getElementById(id_container).style.display = 'block';
     document.getElementById('DetailPostModalFooter').style.display = 'none';
-    // $('#DetailPostModal').animate({ scrollTop: $('#DetailPostModal .modal-dialog').height() }, 500);
     $("#DetailPostModal").scrollTop($("#DetailPostModal").height());
 }
 
@@ -407,7 +406,7 @@ function BackMainDetailAccount(id_container)
     document.getElementById('DetailAccountModal-footer').style.display = 'flex';
 }
 
-function openContainerAction(id_container)
+function openContainerActionDetailAccount(id_container)
 {
     document.getElementById(id_container).style.display = 'block';
     document.getElementById('DetailAccountModal-footer').style.display = 'none';
