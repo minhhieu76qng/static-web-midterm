@@ -26,7 +26,7 @@
 
     <script src="ckeditor/ckeditor.js"></script>
 
-    <title>Đăng bài viết mới</title>
+    <title>Chỉnh sửa bài viết</title>
 </head>
 
 <body>
@@ -127,7 +127,7 @@
                         </nav>
                     </div>
                     <div class="col-5">
-                        <form class="form-inline search-box" action="search.html">
+                        <form class="form-inline search-box">
                             <input class="search-bar form-control" placeholder="Tìm kiếm..." aria-label="Search">
                             <button class="search-button btn" type="submit">
                                 <i class="fa fa-search" aria-hidden="true"></i>
@@ -178,55 +178,10 @@
     <section id="news-management" class="mt-4">
         <div class="container">
             <div class="row">
-                <div class="col-3">
-                    <!-- bao gom menu
-                    * neu la phong vien:
-                        + đăng bài viết mới
-                        + Đã được duyệt & chờ xuất bản
-                        + bài viết đã xuất bản
-                        + bị từ chối
-                        + chưa duyệt
-                        -->
-                    <div class="wrapper">
-                        <ul class="menu-management">
-                            <li class="menu-management-item active">
-                                <a class="link" href="#create-news"><i class="icon fa fa-pencil-square-o"
-                                        aria-hidden="true"></i>
-                                    <div class="linkText">Đăng bài viết mới</div>
-                                </a>
-                            </li>
-                            <li class="menu-management-item">
-                                <a class="link" href="#accepted-news"><i class="icon fa fa-check-square-o"
-                                        aria-hidden="true"></i>
-                                    <div class="linkText">Bài viết đã duyệt</div>
-                                </a>
-                            </li>
-                            <li class="menu-management-item">
-                                <a class="link" href="#not-accepted-news"><i class="icon fa fa-tasks"
-                                        aria-hidden="true"></i>
-                                    <div class="linkText">Bài
-                                        viết chưa duyệt</div>
-                                </a>
-                            </li>
-                            <li class="menu-management-item">
-                                <a class="link" href="#published-news"><i class="icon fa fa-newspaper-o"
-                                        aria-hidden="true"></i>
-                                    <div class="linkText">Bài viết đã xuất bản</div>
-                                </a>
-                            </li>
-                            <li class="menu-management-item">
-                                <a class="link" href="#refuse-news"><i class="icon fa fa-ban" aria-hidden="true"></i>
-                                    <div class="linkText">Bài
-                                        viết bị từ chối</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="col">
                     <div class="wrapper wrapper-content">
                         <div class="content-menu-item" id="create-news">
-                            <h3 class="mb-3 mt-3">Đăng bài viết mới</h3>
+                            <h3 class="mb-3 mt-3">Chỉnh sửa bài viết</h3>
                             <form action="" id="form-created-news" onsubmit="return false">
                                 <div class="form-group">
                                     <label for="post-title">Tiêu đề</label>
@@ -364,173 +319,9 @@
                                 </div>
 
                                 <div class="control-buttons text-center">
-                                    <button class="btn btn-primary" type="submit">Đăng bài</button>
+                                    <button class="btn btn-primary" type="submit">Cập nhập</button>
                                 </div>
                             </form>
-                        </div>
-
-                        <div style="display : none;" class="content-menu-item" id="accepted-news">
-                            <h3 class="mb-3 mt-3">Bài viết đã duyệt</h3>
-                            <table class="table table-hover table-bordered mb-0">
-                                <col style="width:5%">
-                                <col style="width:15%">
-                                <col style="width:40%">
-                                <col style="width:10%">
-                                <col style="width:10%">
-                                <col style="width:20%">
-
-                                <thead class="thead-dark">
-                                    <tr class="text-center">
-                                        <th style="vertical-align: top;">#</th>
-                                        <th style="vertical-align: top;">Chuyên mục</th>
-                                        <th style="vertical-align: top;">Tiêu đề bài viết</th>
-                                        <th style="vertical-align: top;">Thời gian đăng</th>
-                                        <th style="vertical-align: top;">Thời gian xuất bản</th>
-                                        <th style="vertical-align: top;">Người duyệt</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr onclick="openDetailPost(0)">
-                                        <td>1</td>
-                                        <td>Giáo dục</td>
-                                        <td>Những bất cập trong nền giáo dục Việt Nam</td>
-                                        <td>21/04/2019</td>
-                                        <td>30/04/2019</td>
-                                        <td>Nguyễn B</td>
-                                    </tr>
-                                    <tr onclick="openDetailPost(0)">
-                                        <td>2</td>
-                                        <td>Công nghệ</td>
-                                        <td>Một ngày làm việc ở Google</td>
-                                        <td>25/04/2019</td>
-                                        <td>01/05/2019</td>
-                                        <td>Trần L</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div style="display : none;" class="content-menu-item" id="not-accepted-news">
-                            <h3 class="mb-3 mt-3">Bài viết chưa duyệt</h3>
-                            <table class="can-be-edit table table-hover table-bordered mb-0">
-                                <col style="width:5%">
-                                <col style="width:15%">
-                                <col style="width:70%">
-                                <col style="width:10%">
-
-                                <thead class="thead-dark">
-                                    <tr class="text-center">
-                                        <th style="vertical-align: top;">#</th>
-                                        <th style="vertical-align: top;">Chuyên mục</th>
-                                        <th style="vertical-align: top;">Tiêu đề bài viết</th>
-                                        <th style="vertical-align: top;">Thời gian đăng</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr onclick="openDetailPost(1)">
-                                        <td>1</td>
-                                        <td>Giáo dục</td>
-                                        <td>Những bất cập trong nền giáo dục Việt Nam</td>
-                                        <td>21/04/2019</td>
-                                    </tr>
-                                    <tr onclick="openDetailPost(1)">
-                                        <td>2</td>
-                                        <td>Công nghệ</td>
-                                        <td>Một ngày làm việc ở Google</td>
-                                        <td>25/04/2019</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div style="display : none;" class="content-menu-item" id="published-news">
-                            <h3 class="mb-3 mt-3">Bài viết đã xuất bản</h3>
-                            <table class="table table-hover table-bordered mb-0">
-                                <col style="width:5%">
-                                <col style="width:15%">
-                                <col style="width:25%">
-                                <col style="width:10%">
-                                <col style="width:10%">
-                                <col style="width:10%">
-                                <col style="width:20%">
-
-                                <thead class="thead-dark">
-                                    <tr class="text-center">
-                                        <th style="vertical-align: top;">#</th>
-                                        <th style="vertical-align: top;">Chuyên mục</th>
-                                        <th style="vertical-align: top;">Tiêu đề bài viết</th>
-                                        <th style="vertical-align: top;">Thời gian đăng</th>
-                                        <th style="vertical-align: top;">Thời gian duyệt</th>
-                                        <th style="vertical-align: top;">Thời gian xuất bản</th>
-                                        <th style="vertical-align: top;">Người duyệt</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr onclick="openDetailPost(0)">
-                                        <td>1</td>
-                                        <td>Giáo dục</td>
-                                        <td>Những bất cập trong nền giáo dục Việt Nam</td>
-                                        <td>21/04/2019</td>
-                                        <td>30/04/2019</td>
-                                        <td>30/04/2019</td>
-                                        <td>Nguyễn B</td>
-                                    </tr>
-                                    <tr onclick="openDetailPost(0)">
-                                        <td>2</td>
-                                        <td>Công nghệ</td>
-                                        <td>Một ngày làm việc ở Google</td>
-                                        <td>25/04/2019</td>
-                                        <td>25/04/2019</td>
-                                        <td>01/05/2019</td>
-                                        <td>Trần L</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div style="display : none;" class="content-menu-item" id="refuse-news">
-                            <h3 class="mb-3 mt-3">Bài viết bị từ chối</h3>
-                            <table class="can-be-edit table table-hover table-bordered mb-0 w-100">
-                                <col style="width:5%">
-                                <col style="width:15%">
-                                <col style="width:25%">
-                                <col style="width:10%">
-                                <col style="width:10%">
-                                <col style="width:15%">
-                                <col style="width:20%">
-
-                                <thead class="thead-dark">
-                                    <tr class="text-center">
-                                        <th style="vertical-align: top;">#</th>
-                                        <th style="vertical-align: top;">Chuyên mục</th>
-                                        <th style="vertical-align: top;">Tiêu đề bài viết</th>
-                                        <th style="vertical-align: top;">Thời gian đăng</th>
-                                        <th style="vertical-align: top;">Thời gian từ chối</th>
-                                        <th style="vertical-align: top;">Người từ chối</th>
-                                        <th style="vertical-align: top;">Lý do</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr onclick="openDetailPost(1)">
-                                        <td>1</td>
-                                        <td>Giáo dục</td>
-                                        <td>Những bất cập trong nền giáo dục Việt Nam</td>
-                                        <td>21/04/2019</td>
-                                        <td>30/04/2019</td>
-                                        <td>Nguyễn B</td>
-                                        <td>Sai thẻ, nội dung không rõ ràng</td>
-                                    </tr>
-                                    <tr onclick="openDetailPost(1)">
-                                        <td>2</td>
-                                        <td>Công nghệ</td>
-                                        <td>Một ngày làm việc ở Google</td>
-                                        <td>25/04/2019</td>
-                                        <td>25/04/2019</td>
-                                        <td>Trần L</td>
-                                        <td>Cần tìm hiểu lại nguồn tin</td>
-                                    </tr>
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
@@ -638,32 +429,6 @@
             </div>
         </div>
     </div>
-    <!--Modal: detail_post-->
-    <div class="modal fade" id="DetailPostModal" tabindex="-1" role="dialog" aria-labelledby="DetailPostModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <!--Content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Chi tiết bài viết</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <!--Body-->
-                <div class="modal-body mb-0 p-0" id="iframe-detail-post-container">
-                    <iframe height="500px" width="100%" src="iframe_detail_post.html"></iframe>
-                </div>
-                <!--Footer-->
-                <div class="modal-footer justify-content-center">
-                    <a class="btn btn-primary" id="newEditPageLink" style="display: none;" href="edit_post_writer.html"
-                        target="_blank" rel="noopener noreferrer" role="button">Chỉnh sửa</a>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                </div>
-            </div>
-            <!--/.Content-->
-        </div>
-    </div>
 </body>
 
 <!-- jquery -->
@@ -688,6 +453,6 @@
 
 <script src="js/editor_phongvien.js"></script>
 
-<script src="js/writer.js"></script>
+<script src="js/edit_post_writer.js"></script>
 
 </html>

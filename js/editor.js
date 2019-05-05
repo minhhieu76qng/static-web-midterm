@@ -102,7 +102,7 @@ function AddTagFromSelect(name, value) {
     list_tags.appendChild(tag_item);
 }
 
-function openContainerAction(id_container) {
+function openContainerActionDetailPost(id_container) {
     document.getElementById(id_container).style.display = 'block';
     document.getElementById('DetailPostModalFooter').style.display = 'none';
     // $('#DetailPostModal').animate({ scrollTop: $('#DetailPostModal .modal-dialog').height() }, 500);
