@@ -614,6 +614,10 @@ ul.list-article li.article-item .article{
     align-content: center;
 }
 
+.list-tags ul.tags .item{
+    margin-bottom: 10px;
+}
+
 .list_post_page .article .article-thumbnail{
     width: 250px;
 }
