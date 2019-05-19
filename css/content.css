@@ -643,3 +643,13 @@ ul.list-article li.article-item .article{
     font-weight: 500;
     display: block;
 }
+
+.premium-article{
+    position: absolute;
+    padding: 0 5px;
+    top: 10px;
+    left: 16px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
