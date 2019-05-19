@@ -7,11 +7,13 @@ function DisplayHeader() {
         if (isStick === false) {
             document.getElementById('header').querySelector('.top-header').style.display = 'none';
 
-            document.getElementById('header').style.cssText = 'position: fixed; top : 0; width: 100%;'
+            // document.getElementById('header').style.cssText = 'position: fixed; top : 0; width: 100%;';
+            document.getElementById('header').classList.add('fixed-top');
             document.getElementById('nav-search').querySelector('.container').classList.add('container-fluid');
             document.getElementById('nav-search').querySelector('.container').classList.remove('container');
 
-            document.getElementById('nav-search').querySelector('.container-fluid .sub-logo').style.display = 'block';
+            // document.getElementById('nav-search').querySelector('.container-fluid .sub-logo').style.display = 'block';
+            // document.getElementById('nav-search').querySelector('.main-nav .sub-logo').style.display = 'block';
 
             isStick = true;
         }
@@ -20,12 +22,14 @@ function DisplayHeader() {
         if (isStick === true) {
             document.getElementById('header').querySelector('.top-header').style.display = '';
 
-            document.getElementById('header').style.cssText = ''
+            // document.getElementById('header').style.cssText = ''
+            document.getElementById('header').classList.remove('fixed-top');
 
             document.getElementById('nav-search').querySelector('.container-fluid').classList.add('container');
             document.getElementById('nav-search').querySelector('.container-fluid').classList.remove('container-fluid');
 
-            document.getElementById('nav-search').querySelector('.container .sub-logo').style.display = 'none';
+            // document.getElementById('nav-search').querySelector('.container .sub-logo').style.display = 'none';
+            // document.getElementById('nav-search').querySelector('.main-nav .sub-logo').style.display = 'none';
         }
 
         isStick = false;
@@ -39,9 +43,23 @@ function DisplayHeader() {
 function ScrollingSidebar() {
 
     let sidebar = document.querySelector('.widget-sidebar');
-
+    
     if (typeof sidebar === 'undefined' || sidebar === null){
         return;
+    }
+    
+    // kiem tra neu kich thuoc man hinh < 768 thi remove active_sidebar
+    if (document.body.clientWidth < 768){
+
+        if (sidebar.classList.contains('active_sidebar')){
+            sidebar.classList.remove('active_sidebar');
+        }
+    }
+    else{
+
+        if (!sidebar.classList.contains('active_sidebar')){
+            sidebar.classList.add('active_sidebar');
+        }
     }
 
     if (!sidebar.classList.contains("active_sidebar")){
@@ -78,8 +96,6 @@ function ScrollingSidebar() {
 }
 
 function BackToTop(){
-    // get height scroll hien tai
-    // neu height scroll > 100px thi hien thi button. nguoc lai thi an
     if (window.scrollY > window.innerHeight){
         document.getElementById('back-to-top').classList.remove('hidden');
     }
@@ -99,6 +115,8 @@ window.addEventListener('scroll', function () {
 
 window.addEventListener('load', function () {
     ScrollingSidebar();
+
+    DisplayHeader();
 })
 
 // ------------------------------------------

@@ -29,12 +29,14 @@
 
     <link rel="stylesheet" href="css/slick_custom.css">
 
+    <link rel="stylesheet" href="css/responsive.css">
+
     <title>Trang chủ - VN-News</title>
 </head>
 
 <body>
     <div id="top"></div>
-    <header id="header">
+    <header id="header" class="shadow">
         <div class="top-header pt-2 pb-2">
             <div class="container">
                 <div class="row">
@@ -45,16 +47,33 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-2 current-date">
+                    <div class="col-5 col-sm-4 col-lg-2 current-date">
                         <span>Thứ 2, 08/04/2019</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="nav-search">
+
+        <nav id="nav-search" class="navbar navbar-expand-md">
             <div class="container">
-                <div class="row">
-                    <div class="col-1 sub-logo" style="display: none;">
+
+                <div class="sub-logo logo-mobile">
+                    <div class="main-logo">
+                        <a href="index.html">
+                            <img class="logo icon_page" src="./images/logo/logo_red.png" alt="Homepage">
+                        </a>
+                    </div>
+                </div>
+
+                <button style="outline : 0;" class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <div class="main-nav collapse navbar-collapse" id="navbarToggle">
+
+                    <div class="sub-logo logo-desktop">
                         <div class="main-logo">
                             <a href="index.html">
                                 <img class="logo icon_page" src="./images/logo/logo_red.png" alt="Homepage">
@@ -62,88 +81,86 @@
                         </div>
                     </div>
 
-                    <div class="col">
-                        <nav class="main-nav">
-                            <ul class="menu">
+                    <ul class="menu navbar-nav">
+                        <li>
+                            <a class="link active" href="index.html">
+                                Trang chủ
+                            </a>
+                        </li>
+                        <li>
+                            <a class="link" href="list_post.html">Giáo dục</a>
+
+                            <ul class="sub-menu">
                                 <li>
-                                    <a class="link active" href="index.html">
-                                        Trang chủ
-                                    </a>
+                                    <a class="link" href="list_post.html">Tin tuyển sinh</a>
                                 </li>
                                 <li>
-                                    <a class="link" href="list_post.html">Giáo dục</a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a class="link" href="list_post.html">Tin tuyển sinh</a>
-                                        </li>
-                                        <li>
-                                            <a class="link" href="list_post.html">Khuyến học</a>
-                                        </li>
-                                        <li>
-                                            <a class="link" href="list_post.html">Du học</a>
-                                        </li>
-                                    </ul>
+                                    <a class="link" href="list_post.html">Khuyến học</a>
                                 </li>
                                 <li>
-                                    <a class="link" href="list_post.html">Thể thao</a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a class="link" href="list_post.html">Thể thao trong nước</a>
-                                        </li>
-                                        <li>
-                                            <a class="link" href="list_post.html">Thể thao ngoài nước</a>
-                                        </li>
-                                        <li>
-                                            <a class="link" href="list_post.html">Bóng đá trong nước</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="link" href="list_post.html">Công nghệ</a>
-                                </li>
-                                <li>
-                                    <a class="link" href="list_post.html">Giải trí</a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a class="link" href="list_post.html">Sao Việt</a>
-                                        </li>
-                                        <li>
-                                            <a class="link" href="list_post.html">Thời trang</a>
-                                        </li>
-                                        <li>
-                                            <a class="link" href="list_post.html">Xem - Ăn - Chơi</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="link" href="list_post.html">Sức khỏe</a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a class="link" href="list_post.html">Kiến thức giới tính</a>
-                                        </li>
-                                        <li>
-                                            <a class="link" href="list_post.html">Làm đẹp</a>
-                                        </li>
-                                    </ul>
+                                    <a class="link" href="list_post.html">Du học</a>
                                 </li>
                             </ul>
-                        </nav>
-                    </div>
-                    <div class="col-5">
+                        </li>
+                        <li>
+                            <a class="link" href="list_post.html">Thể thao</a>
+                            <ul class="sub-menu navbar-nav">
+                                <li>
+                                    <a class="link" href="list_post.html">Thể thao trong nước</a>
+                                </li>
+                                <li>
+                                    <a class="link" href="list_post.html">Thể thao ngoài nước</a>
+                                </li>
+                                <li>
+                                    <a class="link" href="list_post.html">Bóng đá trong nước</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="link" href="list_post.html">Công nghệ</a>
+                        </li>
+                        <li>
+                            <a class="link" href="list_post.html">Giải trí</a>
+                            <ul class="sub-menu navbar-nav">
+                                <li>
+                                    <a class="link" href="list_post.html">Sao Việt</a>
+                                </li>
+                                <li>
+                                    <a class="link" href="list_post.html">Thời trang</a>
+                                </li>
+                                <li>
+                                    <a class="link" href="list_post.html">Xem - Ăn - Chơi</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="link" href="list_post.html">Sức khỏe</a>
+                            <ul class="sub-menu navbar-nav">
+                                <li>
+                                    <a class="link" href="list_post.html">Kiến thức giới tính</a>
+                                </li>
+                                <li>
+                                    <a class="link" href="list_post.html">Làm đẹp</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="login-search">
                         <form class="form-inline search-box" action="search.html">
                             <input class="search-bar form-control" placeholder="Tìm kiếm..." aria-label="Search">
                             <button class="search-button btn" type="submit">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
                             <!-- <div class="btn btn-outline-secondary">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                            </div> -->
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                            </div> -->
                         </form>
 
                         <!-- khi đăng nhập rồi thì sẽ hiển thị phần này, ngược lại sẽ hiển thị nút đăng nhập -->
                         <div class=" ml-2 dropdown open user-button">
-                            <button class="btn dropdown-toggle d-none" type="button" id="triggerId"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-user-circle-o mr-1" aria-hidden="true"></i> Hieu Do
                             </button>
                             <div class="dropdown-menu" aria-labelledby="triggerId">
@@ -165,19 +182,20 @@
                             </div>
                         </div>
 
-                        <button class="btn login-button ml-2" type="button" data-toggle="modal"
+                        <!-- <button class="btn login-button ml-2" type="button" data-toggle="modal"
                             data-target="#LogInModal" data-backdrop="static">
                             <i class="fa fa-user-circle-o mr-1" aria-hidden="true"></i>
-                        </button>
+                        </button> -->
                     </div>
                 </div>
+
             </div>
-        </div>
+        </nav>
     </header>
 
     <div class="container">
         <div class="impressive-articles row mt-4">
-            <div class="col-9">
+            <div class="col-md-9 col-12">
                 <div class="slick-wrapper">
                     <div class="article">
                         <div class="article-thumbnail">
@@ -244,7 +262,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-3 col-12">
                 <div class="advertisement">
                     <a href="https://www.zalora.sg/" target="_blank">
                         <img src="images/add/add1.jpg" alt="">
@@ -255,7 +273,7 @@
         <div class="lasted-articles mt-4">
             <h2 class="article-header">Tin mới nhất</h2>
             <div class="slick-wrapper row pt-4">
-                <div class="col-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="article">
                         <div class="article-thumbnail">
                             <div class="thumbnail-image">
@@ -277,7 +295,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="article">
                         <div class="article-thumbnail">
                             <div class="thumbnail-image">
@@ -299,7 +317,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="article">
                         <div class="article-thumbnail">
                             <div class="thumbnail-image">
@@ -321,7 +339,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="article">
                         <div class="article-thumbnail">
                             <div class="thumbnail-image">
@@ -343,7 +361,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="article">
                         <div class="article-thumbnail">
                             <div class="thumbnail-image">
@@ -365,7 +383,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="article">
                         <div class="article-thumbnail">
                             <div class="thumbnail-image">
@@ -392,8 +410,8 @@
 
         <div class="row mt-4">
             <div class="col top-10-articles">
-                <div class="row mt-4">
-                    <div class="col">
+                <div class="row">
+                    <div class="col-12 col-sm">
                         <h2 class="article-header">Tin tuyển sinh</h2>
                         <div class="article mt-4">
                             <div class="article-thumbnail">
@@ -416,7 +434,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-sm">
                         <h2 class="article-header">Khuyến học</h2>
                         <div class="article mt-4">
                             <div class="article-thumbnail">
@@ -440,8 +458,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4">
-                    <div class="col">
+                <div class="row">
+                    <div class="col-12 col-sm">
                         <h2 class="article-header">Du học</h2>
                         <div class="article mt-4">
                             <div class="article-thumbnail">
@@ -464,7 +482,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-sm">
                         <h2 class="article-header">Công nghệ</h2>
                         <div class="article mt-4">
                             <div class="article-thumbnail">
@@ -488,8 +506,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4">
-                    <div class="col">
+                <div class="row">
+                    <div class="col-12 col-sm">
                         <h2 class="article-header">Thể thao trong nước</h2>
                         <div class="article mt-4">
                             <div class="article-thumbnail">
@@ -512,7 +530,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-sm">
                         <h2 class="article-header">Thể thao ngoài nước</h2>
                         <div class="article mt-4">
                             <div class="article-thumbnail">
@@ -536,8 +554,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4">
-                    <div class="col">
+                <div class="row">
+                    <div class="col-12 col-sm">
                         <h2 class="article-header">Bóng đá trong nước</h2>
                         <div class="article mt-4">
                             <div class="article-thumbnail">
@@ -560,7 +578,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-sm">
                         <h2 class="article-header">Sao Việt</h2>
                         <div class="article mt-4">
                             <div class="article-thumbnail">
@@ -584,8 +602,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4">
-                    <div class="col">
+                <div class="row">
+                    <div class="col-12 col-sm">
                         <h2 class="article-header">Thời trang</h2>
                         <div class="article mt-4">
                             <div class="article-thumbnail">
@@ -608,7 +626,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-sm">
                         <h2 class="article-header">Ăn - Chơi - Xem</h2>
                         <div class="article mt-4">
                             <div class="article-thumbnail">
@@ -633,7 +651,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 widget-sidebar active_sidebar">
+            <div class="col-12 col-md-4 widget-sidebar active_sidebar">
                 <div class="sidebar-wrapper">
                     <div class="mt-4 most-view">
                         <h2 class="article-header">Tin xem nhiều nhất</h2>
@@ -766,7 +784,7 @@
         <div class="footer-widgets">
             <div class="container">
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-12 col-sm-2">
                         <div class="widget">
                             <a href="index.html">
                                 <img class="logo icon_page" src="images/logo/logo_red.png" alt="Trang chủ"
@@ -774,7 +792,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-sm-3">
                         <div class="widget">
                             <h3 class="widget-title">Chuyên mục</h3>
                             <ul class="category widget-menu widget-content">
@@ -796,7 +814,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-sm-4">
                         <h3 class="widget-title">Liên hệ</h3>
                         <ul class="contact widget-menu widget-content">
                             <li>Địa chỉ: 227 đường Nguyễn Văn Cừ, quận 5, TP. Hồ chí Minh, Việt Nam</li>
@@ -804,7 +822,7 @@
                             <li><a class="link" href="mailto:vn-news@abc.xyz.xx">Email: vn-news@abc.xyz.xx</a></li>
                         </ul>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-sm-3">
                         <h3 class="widget-title">Về chúng tôi</h3>
                         <div class="about-us widget-content">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ducimus corporis vitae qui fugit
@@ -1002,7 +1020,7 @@
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 2000,
-            speed: 2000
+            speed: 2000,
         });
     });
 
@@ -1015,7 +1033,35 @@
             slidesToScroll: 4,
             autoplay: true,
             autoplaySpeed: 2000,
-            speed: 2000
+            speed: 2000,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
         });
     })
 </script>
